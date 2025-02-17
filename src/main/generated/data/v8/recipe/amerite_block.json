@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "v8:v8",
+    "@": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "###",
+    "@# ",
+    " @ "
+  ],
+  "result": {
+    "count": 4,
+    "id": "v8:amerite_block"
+  }
+}

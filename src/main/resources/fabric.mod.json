@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "v8",
+  "version": "${version}",
+  "name": "V8",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/v8/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.tattyhost.fabric.v8.client.V8Client"
+    ],
+    "main": [
+      "com.tattyhost.fabric.v8.V8"
+    ],
+    "fabric-datagen": [
+      "com.tattyhost.fabric.v8.client.datagen.DataGenerator"
+    ]
+  },
+  "mixins": [
+    "v8.mixins.json",
+    {
+      "config": "v8.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

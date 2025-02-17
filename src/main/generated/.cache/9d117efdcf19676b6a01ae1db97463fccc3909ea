@@ -1,0 +1,9 @@
+// 1.21.4	-999999999-01-01T00:00:00	V8/Tags for minecraft:block
+cd8d7d6c0a9cd20ed445aae81aaf152ddd137fbd data/minecraft/tags/block/incorrect_for_diamond_tool.json
+cd8d7d6c0a9cd20ed445aae81aaf152ddd137fbd data/minecraft/tags/block/incorrect_for_gold_tool.json
+cd8d7d6c0a9cd20ed445aae81aaf152ddd137fbd data/minecraft/tags/block/incorrect_for_iron_tool.json
+cd8d7d6c0a9cd20ed445aae81aaf152ddd137fbd data/minecraft/tags/block/incorrect_for_stone_tool.json
+cd8d7d6c0a9cd20ed445aae81aaf152ddd137fbd data/minecraft/tags/block/incorrect_for_wooden_tool.json
+291980f94622763a15723e33254c01e81efba826 data/minecraft/tags/block/mineable/pickaxe.json
+62ddb0249fb8e344ecd8ea194963f889a84c1870 data/minecraft/tags/block/needs_diamond_tool.json
+745335ce157f6f54c7353bd4a85816e67c714aab data/minecraft/tags/block/needs_iron_tool.json

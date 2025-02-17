@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "v8:v8"
+  },
+  "pattern": [
+    "###",
+    "# #",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "id": "v8:v8_block"
+  }
+}
