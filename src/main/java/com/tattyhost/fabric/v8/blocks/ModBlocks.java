@@ -2,6 +2,7 @@ package com.tattyhost.fabric.v8.blocks;
 
 import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.custom.DedlefBlock;
+import com.tattyhost.fabric.v8.blocks.custom.GuenterBlock;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
 import com.tattyhost.fabric.v8.items.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -19,13 +20,21 @@ public class ModBlocks {
 
     public static final Block V8_BLOCK = register("v8_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(1.0f).resistance(6.0f), true, true );
     public static final Block AMERITE_BLOCK = register("amerite_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(2.0f).resistance(2.0f), true, true );
-    public static final Block GUENTER = register("guenter", AbstractBlock.Settings.copy(Blocks.IRON_ORE).hardness(2.0f).resistance(2.0f), true, true );
 
+    public static final Identifier GUENTER_ID = Identifier.of(V8.MOD_ID, "guenter");
+    private static final RegistryKey<Block> GUENTER_KEY = RegistryKey.of(RegistryKeys.BLOCK, GUENTER_ID);
+    public static final Block GUENTER = register(
+            new GuenterBlock(
+                    AbstractBlock.Settings.copy(Blocks.STONE)
+                            .hardness(2.0f)
+                            .resistance(2.0f)
+                            .registryKey(GUENTER_KEY)),
+            GUENTER_KEY,
+            true,
+            true );
 
     public static final Identifier HIGH_TEMP_FURNACE_ID = Identifier.of(V8.MOD_ID, "high_temp_furnace");
     private static final RegistryKey<Block> HIGH_TEMP_FURNACE_KEY = RegistryKey.of(RegistryKeys.BLOCK, HIGH_TEMP_FURNACE_ID);
-
-
     public static final Block HIGH_TEMP_FURNACE = register(new HighTempFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).registryKey(HIGH_TEMP_FURNACE_KEY)), HIGH_TEMP_FURNACE_KEY, true, true );
 
     public static final Identifier DEDLEF_BLOCK_ID = Identifier.of(V8.MOD_ID, "dedlef");

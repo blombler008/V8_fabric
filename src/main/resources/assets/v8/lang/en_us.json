@@ -13,5 +13,6 @@
   "item.v8.high_temp_furnace_heater": "High Temperature Furnace Heater",
   "item.v8.high_temp_furnace_cooler": "High Temperature Furnace Cooler",
   "item.v8.high_temp_furnace_tank": "High Temperature Furnace Tank",
-  "container.v8.high_temp_furnace": "HT Furnace"
+  "container.v8.high_temp_furnace": "HT Furnace",
+  "container.v8.guenter": "The Smoker (Günter)"
 }

@@ -6,7 +6,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 
-public interface HighTempFurnaceInventory extends Inventory {
+public interface InventoryImplementation extends Inventory {
 
     /**
      * Retrieves the item list of this inventory.
@@ -17,14 +17,14 @@ public interface HighTempFurnaceInventory extends Inventory {
     /**
      * Creates an inventory from the item list.
      */
-    static HighTempFurnaceInventory of(DefaultedList<ItemStack> items) {
+    static InventoryImplementation of(DefaultedList<ItemStack> items) {
         return () -> items;
     }
 
     /**
      * Creates a new inventory with the specified size.
      */
-    static HighTempFurnaceInventory ofSize(int size) {
+    static InventoryImplementation ofSize(int size) {
         return of(DefaultedList.ofSize(size, ItemStack.EMPTY));
     }
 
@@ -80,7 +80,9 @@ public interface HighTempFurnaceInventory extends Inventory {
      */
     @Override
     default ItemStack removeStack(int slot) {
-        return Inventories.removeStack(getItems(), slot);
+        ItemStack result = Inventories.removeStack(getItems(), slot);
+        markDirty();
+        return result;
     }
 
     /**
@@ -92,10 +94,12 @@ public interface HighTempFurnaceInventory extends Inventory {
      */
     @Override
     default void setStack(int slot, ItemStack stack) {
+
         getItems().set(slot, stack);
         if (stack.getCount() > stack.getMaxCount()) {
             stack.setCount(stack.getMaxCount());
         }
+        markDirty();
     }
 
     /**
@@ -104,6 +108,7 @@ public interface HighTempFurnaceInventory extends Inventory {
     @Override
     default void clear() {
         getItems().clear();
+        markDirty();
     }
 
     /**
@@ -113,7 +118,7 @@ public interface HighTempFurnaceInventory extends Inventory {
      */
     @Override
     default void markDirty() {
-        // Override if you want behavior.
+
     }
 
     /**

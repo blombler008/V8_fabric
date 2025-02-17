@@ -11,6 +11,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class CigaretteItem extends Item {
     public CigaretteItem(Settings settings) {
         super(settings);
@@ -19,7 +21,7 @@ public class CigaretteItem extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack, LivingEntity user) {
-        return 120;
+        return 20*60;
     }
 
     @Override
@@ -38,7 +40,14 @@ public class CigaretteItem extends Item {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
 //        this.playStopUsingSound(user);
-        return stack;
+
+        stack.setCount(stack.getCount() - 1);
+
+        Random random = new Random();
+        if (random.nextInt(100) < 10)
+            user.giveOrDropStack(new ItemStack(ModItems.MAGIC_ASH_ITEM));
+
+        return stack.isEmpty() ? new ItemStack(Items.AIR) : stack;
     }
 
     @Override

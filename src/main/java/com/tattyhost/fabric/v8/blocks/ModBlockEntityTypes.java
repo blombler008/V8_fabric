@@ -1,6 +1,7 @@
 package com.tattyhost.fabric.v8.blocks;
 
 import com.tattyhost.fabric.v8.V8;
+import com.tattyhost.fabric.v8.blocks.custom.GuenterBlockEntity;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
@@ -21,11 +22,11 @@ public class ModBlockEntityTypes {
     );
 
 
-    public static final BlockEntityType<HighTempFurnaceBlockEntity> GUENTER_BLOCK_ENTITY_TYPE = register(
+    public static final BlockEntityType<GuenterBlockEntity> GUENTER_BLOCK_ENTITY_TYPE = register(
             "guenter",
             // For versions 1.21.2 and above,
             // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
-            FabricBlockEntityTypeBuilder.create(HighTempFurnaceBlockEntity::new, ModBlocks.HIGH_TEMP_FURNACE).build()
+            FabricBlockEntityTypeBuilder.create(GuenterBlockEntity::new, ModBlocks.GUENTER).build()
     );
 
     public static void initialize() {

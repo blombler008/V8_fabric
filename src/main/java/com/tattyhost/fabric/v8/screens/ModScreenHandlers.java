@@ -12,6 +12,12 @@ public class ModScreenHandlers {
             new ScreenHandlerType<>(HighTempFurnaceScreenHandler::new, FeatureSet.empty())
     );
 
+    public static final ScreenHandlerType<GuenterScreenHandler> GUENTER_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER,
+            ModBlocks.GUENTER_ID,
+            new ScreenHandlerType<>(GuenterScreenHandler::new, FeatureSet.empty())
+    );
+
+
 
 
     public static void initialize() {

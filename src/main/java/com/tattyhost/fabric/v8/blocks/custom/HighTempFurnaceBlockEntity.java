@@ -1,7 +1,7 @@
 package com.tattyhost.fabric.v8.blocks.custom;
 
 import com.tattyhost.fabric.v8.blocks.ModBlockEntityTypes;
-import com.tattyhost.fabric.v8.screens.HighTempFurnaceInventory;
+import com.tattyhost.fabric.v8.screens.InventoryImplementation;
 import com.tattyhost.fabric.v8.screens.HighTempFurnaceScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -19,7 +19,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class HighTempFurnaceBlockEntity extends BlockEntity implements HighTempFurnaceInventory, NamedScreenHandlerFactory {
+public class HighTempFurnaceBlockEntity extends BlockEntity implements InventoryImplementation, NamedScreenHandlerFactory {
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
     public static final int INPUT_SLOT = 0;
