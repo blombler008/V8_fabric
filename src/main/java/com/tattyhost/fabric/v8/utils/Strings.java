@@ -29,4 +29,7 @@ public class Strings {
     public static final String CONTAINER_GUENTER_TRANSLATION_KEY            = "container.v8.guenter";
     public static final String CONTAINER_HIGH_TEMP_FURNACE_TRANSLATION_KEY  = "container.v8.high_temp_furnace";
 
+
+    public static final String BLOCK_HIGH_TEMP_FURNACE_NAME                 = "high_temp_furnace";
+
 }

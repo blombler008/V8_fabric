@@ -1,6 +1,7 @@
 package com.tattyhost.fabric.v8.items;
 
 import com.tattyhost.fabric.v8.V8;
+import com.tattyhost.fabric.v8.utils.ItemConstructorFactory;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -25,7 +26,7 @@ public class ModItems {
 
 
 
-    public static Item registerCustom(String name, ConstructorFactory constructor, boolean visible) {
+    public static Item registerCustom(String name, ItemConstructorFactory constructor, boolean visible) {
         RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, name));
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 

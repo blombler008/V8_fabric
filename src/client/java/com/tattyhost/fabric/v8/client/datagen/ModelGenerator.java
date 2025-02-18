@@ -4,8 +4,10 @@ import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
 import com.tattyhost.fabric.v8.items.ModItems;
+import com.tattyhost.fabric.v8.utils.Strings;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.block.Block;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.item.model.ItemModel;
@@ -47,7 +49,7 @@ public class ModelGenerator extends FabricModelProvider {
                             String halfStr = half == DoubleBlockHalf.LOWER ? "_lower" : "_upper";
 //                            int rot = ((face.getHorizontalQuarterTurns() + 2) % 4) * 90; // Rotation berechnen
                             VariantSettings.Rotation rotation = getRotationForFace(face);
-                            Identifier modelId = Identifier.of(V8.MOD_ID, "block/" + ModBlocks.HIGH_TEMP_FURNACE_ID.getPath() + halfStr);
+                            Identifier modelId = Identifier.of(V8.MOD_ID, "block/" + Strings.BLOCK_HIGH_TEMP_FURNACE_NAME + halfStr);
 
                             return BlockStateVariant.create()
                                     .put(VariantSettings.MODEL, modelId)
@@ -56,7 +58,7 @@ public class ModelGenerator extends FabricModelProvider {
                 );
 
         generator.blockStateCollector.accept(supplier);
-        Identifier itemModelId = Identifier.of(V8.MOD_ID, "block/" + ModBlocks.HIGH_TEMP_FURNACE_ID.getPath() + "_item");
+        Identifier itemModelId = Identifier.of(V8.MOD_ID, "block/" + Strings.BLOCK_HIGH_TEMP_FURNACE_NAME + "_item");
         generator.registerParentedItemModel(ModBlocks.HIGH_TEMP_FURNACE, itemModelId);
     }
 
