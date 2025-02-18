@@ -74,15 +74,6 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
 
     public GuenterBlockEntity(BlockPos blockPos, BlockState blockState) {
         this(ModBlockEntityTypes.GUENTER_BLOCK_ENTITY_TYPE, blockPos, blockState);
-        World world = getWorld();
-        if(world != null) {
-            BlockEntity blockEntity = world.getBlockEntity(blockPos);
-
-            if(blockEntity != null) {
-                LogUtils.getLogger().info("GuenterBlockEntity created pub4 at position: " + blockPos);
-            }
-        }
-
     }
 
     @Override

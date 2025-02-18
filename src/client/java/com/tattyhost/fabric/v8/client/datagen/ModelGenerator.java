@@ -96,6 +96,7 @@ public class ModelGenerator extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator generator) {
 
         generator.register(ModItems.V8_ITEM, Models.GENERATED);
+        generator.register(ModItems.TOBACCO_SEEDS, Models.GENERATED);
         registerWithInHandModel(generator, ModItems.CIGARETTE_ITEM);
         generator.register(ModItems.MAGIC_ASH_ITEM, Models.GENERATED);
 //        generator.register(ModBlocks.V8_BLOCK.asItem(), Models.CUBE_ALL);

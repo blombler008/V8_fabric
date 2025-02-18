@@ -17,6 +17,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
+import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_GUENTER_NAME;
 import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_HIGH_TEMP_FURNACE_NAME;
 
 public class ModBlocks {
@@ -24,7 +25,7 @@ public class ModBlocks {
     public static final Block V8_BLOCK = register("v8_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(1.0f).resistance(6.0f), true, true );
     public static final Block AMERITE_BLOCK = register("amerite_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(2.0f).resistance(2.0f), true, true );
 
-    public static final Block GUENTER = register("guenter", GuenterBlock::new, true, true );
+    public static final Block GUENTER = register(BLOCK_GUENTER_NAME, GuenterBlock::new, true, true );
     public static final Block HIGH_TEMP_FURNACE = register(BLOCK_HIGH_TEMP_FURNACE_NAME, HighTempFurnaceBlock::new, true, true );
     public static final Block DEDLEF = register("dedlef", DedlefBlock::new, true, true );
 

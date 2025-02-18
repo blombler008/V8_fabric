@@ -10,6 +10,7 @@ ef58dc5f91c0f4eacf791a299470c8a85fb21dd9 assets/v8/blockstates/guenter.json
 e8e9fd5df3462c1ba4877bb97719920b3c980ece assets/v8/items/guenter.json
 a48b209430b69b4246d87fc2eaf6c76884b5868b assets/v8/items/high_temp_furnace.json
 6c11b31c2905461a3c8691431ea69f00a21dd931 assets/v8/items/magic_ash.json
+f860fed0f6b134bdc9e14a62cb68cc4765bcef75 assets/v8/items/tobacco_seeds.json
 661c0d76fe77f29f4124aeb068b0e7ebbeca9fa2 assets/v8/items/v8.json
 e2db3a9f60f33b0a9d5ab9f452302e52357a6b8c assets/v8/items/v8_block.json
 4c614b7d8b9c2ce45e60d3e8b98556e4a359c62d assets/v8/models/block/amerite_block.json
@@ -18,4 +19,5 @@ e2db3a9f60f33b0a9d5ab9f452302e52357a6b8c assets/v8/items/v8_block.json
 7b4d9caf3dd96ed7f9702491fda3e5bb1437a159 assets/v8/models/block/v8_block.json
 7dd31fa5dc9718af970973db9bb4267f15222434 assets/v8/models/item/cigarette.json
 e372b8b3fdec48f4eb2f08272e91bc2c0bc5957c assets/v8/models/item/magic_ash.json
+baf96ef5b814c01427d4cf822611098486540d1b assets/v8/models/item/tobacco_seeds.json
 2fd22415b0e1e0487901b465b334a2be685bad94 assets/v8/models/item/v8.json

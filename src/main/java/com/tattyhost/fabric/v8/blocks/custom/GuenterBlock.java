@@ -36,7 +36,6 @@ public class GuenterBlock extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        LogUtils.getLogger().info("GuenterBlock createBlockEntity called");
         return new GuenterBlockEntity(pos, state);
     }
 

@@ -31,5 +31,5 @@ public class Strings {
 
 
     public static final String BLOCK_HIGH_TEMP_FURNACE_NAME                 = "high_temp_furnace";
-
+    public static final String BLOCK_GUENTER_NAME                           = "guenter";
 }
