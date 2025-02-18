@@ -1,17 +1,21 @@
 package com.tattyhost.fabric.v8.screens;
 
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.custom.GuenterBlockEntity;
 import com.tattyhost.fabric.v8.items.ModItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
 public class GuenterScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
 
     private static final int INVENTORY_SLOTS = 3;
 
@@ -19,19 +23,20 @@ public class GuenterScreenHandler extends ScreenHandler {
     // The client will call the other constructor with an empty Inventory and the screenHandler will automatically
     // sync this empty inventory with the inventory on the server.
     public GuenterScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(INVENTORY_SLOTS));
+        this(syncId, playerInventory, new SimpleInventory(INVENTORY_SLOTS), new ArrayPropertyDelegate(2));
     }
 
     // This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     // and can therefore directly provide it as an argument. This inventory will then be synced to the client.
-    public GuenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public GuenterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(ModScreenHandlers.GUENTER_SCREEN_HANDLER, syncId);
         enableSyncing();
         checkSize(inventory, INVENTORY_SLOTS);
         this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
         // some inventories do custom logic when a player opens it.
 //        inventory.onOpen(playerInventory.player);
-
+        addProperties(propertyDelegate);
         // This will place the slot in the correct locations for a 3x3 Grid. The slots exist on both server and client!
         // This will not render the background of the slots however, this is the Screens job
         int m;
@@ -95,6 +100,14 @@ public class GuenterScreenHandler extends ScreenHandler {
         }
 
         return newStack;
+    }
+
+    public int getProgress() {
+        return propertyDelegate.get(0);
+    }
+
+    public int getMaxProgress() {
+        return propertyDelegate.get(1);
     }
 
     private static class OutputSlot extends Slot {

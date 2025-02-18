@@ -32,7 +32,14 @@ public class GuenterScreen extends HandledScreen<GuenterScreenHandler> {
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         context.drawTexture(RenderLayer::getGuiTextured, TEXTURE, x, y, 0, 0, 176, 141, 176, 141);
+
+        // Draw the progress arrow
+        int progress = handler.getProgress();
+        int maxProgress = handler.getMaxProgress();
+        int arrowWidth = (int) ((float) progress / maxProgress * 16);
+        context.drawTexture(RenderLayer::getGuiTextured, ARROW, x+74,y+24, 0, 0, arrowWidth, 9, 16, 9);
     }
+
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {

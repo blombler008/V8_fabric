@@ -1,5 +1,6 @@
 package com.tattyhost.fabric.v8.blocks.custom;
 
+import com.mojang.logging.LogUtils;
 import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModBlockEntityTypes;
 import com.tattyhost.fabric.v8.items.ModItems;
@@ -16,9 +17,16 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +46,29 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
     private Random random = new Random();
     private boolean canProgress = false;
 
+    private final PropertyDelegate propertyDelegate = new ArrayPropertyDelegate(2) {
+        @Override
+        public int get(int index) {
+            switch (index) {
+                case 0: return GuenterBlockEntity.this.getProgress();
+                case 1: return GuenterBlockEntity.this.getMaxProgress();
+                default: return 0;
+            }
+        }
 
+        @Override
+        public void set(int index, int value) {
+            switch (index) {
+                case 0: GuenterBlockEntity.this.setProgress(value); break;
+                case 1: GuenterBlockEntity.this.setMaxProgress(value); break;
+            }
+        }
+
+        @Override
+        public int size() {
+            return 2;
+        }
+    };
 
     public GuenterBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -46,6 +76,25 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
 
     public GuenterBlockEntity(BlockPos blockPos, BlockState blockState) {
         this(ModBlockEntityTypes.GUENTER_BLOCK_ENTITY_TYPE, blockPos, blockState);
+        World world = getWorld();
+        if(world != null) {
+            BlockEntity blockEntity = world.getBlockEntity(blockPos);
+
+            if(blockEntity != null) {
+                LogUtils.getLogger().info("GuenterBlockEntity created pub4 at position: " + blockPos);
+            }
+        }
+
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registries) {
+        return createNbt(registries);
+    }
+
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
     }
 
 
@@ -72,14 +121,39 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
         }
     }
 
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public int getMaxProgress() {
+        return maxProgress;
+    }
+
+    public void setMaxProgress(int maxProgress) {
+        this.maxProgress = maxProgress;
+    }
+
     private boolean progressFinished() {
-        return progress >= maxProgress;
+        return getProgress() >= getMaxProgress();
     }
 
     private boolean hasRecipe() {
         if (items.get(INPUT_SLOT).isEmpty()) {
             return false;
         }
+
+        if(items.get(OUTPUT1_SLOT).getCount() > 63) {
+            return false;
+        }
+
+        if (items.get(OUTPUT2_SLOT).getCount() > 63) {
+            return false;
+        }
+
         return true;
     }
 
@@ -89,7 +163,7 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
 
 
     private void increaseProgress() {
-        progress++;
+        setProgress(getProgress() + 1);
     }
 
 
@@ -99,8 +173,10 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
 
         if(slot1.isEmpty()) {
             items.set(OUTPUT1_SLOT, new ItemStack(Items.COAL));
-            return;
+        } else {
+            slot1.increment(1);
         }
+
 
         if(random.nextInt(100) > 10)
            return;
@@ -146,12 +222,14 @@ public class GuenterBlockEntity extends LockableContainerBlockEntity implements 
 
         @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return new GuenterScreenHandler(syncId, playerInventory, this);
+
+
+        return new GuenterScreenHandler(syncId, playerInventory, this, propertyDelegate);
     }
 
     @Override
     protected Text getContainerName() {
-        return getDisplayName();
+        return Text.translatable(getCachedState().getBlock().getTranslationKey());
     }
 
     @Override

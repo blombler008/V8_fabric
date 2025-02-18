@@ -1,5 +1,6 @@
 package com.tattyhost.fabric.v8.blocks.custom;
 
+import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 import com.tattyhost.fabric.v8.blocks.ModBlockEntityTypes;
 import net.minecraft.block.BlockRenderType;
@@ -35,6 +36,7 @@ public class GuenterBlock extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        LogUtils.getLogger().info("GuenterBlock createBlockEntity called");
         return new GuenterBlockEntity(pos, state);
     }
 
@@ -57,7 +59,7 @@ public class GuenterBlock extends BlockWithEntity {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         // Make sure to check world.isClient if you only want to tick only on serverside.
-        if(!world.isClient) {
+        if(world.isClient) {
             return null;
         }
 
