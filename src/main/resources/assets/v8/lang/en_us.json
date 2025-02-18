@@ -5,14 +5,60 @@
   "item.v8.v8_block": "V8 Block",
   "item.v8.guenter": "Günter",
   "item.v8.magic_ash": "Magic Ash",
-  "item.v8.cigarette": "Cigarette",
+
+
   "item.v8.dedlef": "Dedlef",
   "item.v8.amerite_block": "Amerite Block",
+  "item.v8.tobacco_seeds": "Tobacco Seeds",
+
+  "item.v8.tobacco_leaf": "Tobacco Leaf",
+  "item.v8.tobacco_dried": "Dried Tobacco",
+  "item.v8.tobacco": "Tobacco",
+
+  "item.v8.tobacco_dried_shredded": "Shredded Tobacco",
+  "item.v8.tobacco_dried_cut": "Cut Tobacco",
+  "item.v8.tobacco_dried_cured": "Cured Tobacco",
+  "item.v8.tobacco_dried_flavored": "Flavored Tobacco",
+  "item.v8.tobacco_dried_shredded_flavored": "Flavored Shredded Tobacco",
+  "item.v8.tobacco_dried_cut_flavored": "Flavored Cut Tobacco",
+  "item.v8.tobacco_dried_cured_flavored": "Flavored Cured Tobacco",
+
+  "item.v8.cigarette_filter": "Cigarette Filter",
+  "item.v8.cigarette_tube_empty": "Empty Cigarette Tube",
+  "item.v8.cigarette_tube": "Cigarette Tube",
+  "item.v8.cigarette_tube_empty_filter": "Empty Cigarette Tube with Filter",
+  "item.v8.cigarette_tube_filter": "Cigarette Tube with Filter",
+
+  "item.v8.cigarette": "Cigarette",
+  "item.v8.cigarette_ash": "Cigarette Ash",
+  "item.v8.cigarette_shredded": "Shredded Cigarette",
+  "item.v8.cigarette_cut": "Cut Cigarette",
+  "item.v8.cigarette_cured": "Cured Cigarette",
+  "item.v8.cigarette_flavored": "Flavored Cigarette",
+  "item.v8.cigarette_shredded_flavored": "Flavored Shredded Cigarette",
+  "item.v8.cigarette_cut_flavored": "Flavored Cut Cigarette",
+  "item.v8.cigarette_cured_flavored": "Flavored Cured Cigarette",
+
+  "item.v8.ash_tray": "Ash Tray",
+  "item.v8.ash_tray.tooltip": "A tray for cigarette ash. Can be used to collect cigarette ash.",
+  "item.v8.ash_tray_full": "Full Ash Tray",
+
+  "item.v8.cigarette_carton": "Cigarette Carton",
+  "item.v8.cigarette_carton.tooltip": "A carton of cigarettes. Contains 10 cigarette packs.",
+
+  "item.v8.cigarette_pack": "Cigarette Pack",
+  "item.v8.cigarette_pack_empty": "Empty Cigarette Pack",
+  "item.v8.cigarette_pack.tooltip": "A pack of cigarettes. Contains 21 cigarettes.",
+
+
   "item.v8.high_temp_furnace": "High Temperature Furnace",
+
   "item.v8.high_temp_furnace_controller": "High Temperature Furnace Controller",
   "item.v8.high_temp_furnace_heater": "High Temperature Furnace Heater",
   "item.v8.high_temp_furnace_cooler": "High Temperature Furnace Cooler",
   "item.v8.high_temp_furnace_tank": "High Temperature Furnace Tank",
+
+
   "container.v8.high_temp_furnace": "HT Furnace",
   "container.v8.guenter": "The Smoker (Günter)"
 }
