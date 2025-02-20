@@ -6,8 +6,6 @@ import com.tattyhost.fabric.v8.utils.ItemConstructorFactory;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -16,7 +14,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class ModItems {
 

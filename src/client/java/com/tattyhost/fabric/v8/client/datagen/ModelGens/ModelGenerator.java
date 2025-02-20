@@ -70,7 +70,7 @@ public class ModelGenerator extends FabricModelProvider {
 
     public static ItemModel.Unbaked createModelWithInHandAndGroundVariant(ItemModel.Unbaked model, ItemModel.Unbaked inHandModel, ItemModel.Unbaked inUseModel) {
         DisplayContextProperty displayContextProperty = new DisplayContextProperty();
-        ItemModels.usingItemProperty();
+//        ItemModels.usingItemProperty();
 
         return ItemModels.select(displayContextProperty, inHandModel,
                 ItemModels.switchCase(List.of(ModelTransformationMode.GUI, ModelTransformationMode.FIXED),

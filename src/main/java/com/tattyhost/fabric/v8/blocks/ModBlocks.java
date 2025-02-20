@@ -7,7 +7,10 @@ import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
 import com.tattyhost.fabric.v8.blocks.custom.plants.TobaccoPlant;
 import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.utils.BlockConstructorFactory;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -17,8 +20,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-
-import java.util.function.Function;
 
 import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_GUENTER_NAME;
 import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_HIGH_TEMP_FURNACE_NAME;
@@ -41,14 +42,14 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.CROP)
             .pistonBehavior(PistonBehavior.DESTROY), false, false );
 
-    private static Block register(String key, BlockConstructorFactory constructor, AbstractBlock.Settings settings, boolean shouldRegisterItem, boolean visible) {
+    private static Block register(String key, BlockConstructorFactory<Block> constructor, AbstractBlock.Settings settings, boolean shouldRegisterItem, boolean visible) {
         Identifier identifier = Identifier.of(V8.MOD_ID, key);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
 
         return register(constructor.create(settings.registryKey(blockKey)), blockKey, shouldRegisterItem, visible);
     }
 
-    public static Block register(String key, BlockConstructorFactory constructor, boolean shouldRegisterItem, boolean visible) {
+    public static Block register(String key, BlockConstructorFactory<Block> constructor, boolean shouldRegisterItem, boolean visible) {
         Identifier identifier = Identifier.of(V8.MOD_ID, key);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
 

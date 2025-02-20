@@ -26,7 +26,7 @@ public class PlantModelGenerator extends FabricModelProvider {
         if (ageProperty.getValues().size() != ageTextureIndices.length) {
             throw new IllegalArgumentException();
         } else {
-            Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap();
+            Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
             BlockStateVariantMap blockStateVariantMap = BlockStateVariantMap.create(ageProperty).register((integer) -> {
                 int i = ageTextureIndices[integer];
                 Identifier identifier = int2ObjectMap.computeIfAbsent(i, (j) -> {
