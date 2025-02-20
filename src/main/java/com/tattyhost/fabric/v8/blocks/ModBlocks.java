@@ -4,18 +4,21 @@ import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.custom.DedlefBlock;
 import com.tattyhost.fabric.v8.blocks.custom.GuenterBlock;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
+import com.tattyhost.fabric.v8.blocks.custom.plants.TobaccoPlant;
 import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.utils.BlockConstructorFactory;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
+import java.util.function.Function;
 
 import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_GUENTER_NAME;
 import static com.tattyhost.fabric.v8.utils.Strings.BLOCK_HIGH_TEMP_FURNACE_NAME;
@@ -28,6 +31,22 @@ public class ModBlocks {
     public static final Block GUENTER = register(BLOCK_GUENTER_NAME, GuenterBlock::new, true, true );
     public static final Block HIGH_TEMP_FURNACE = register(BLOCK_HIGH_TEMP_FURNACE_NAME, HighTempFurnaceBlock::new, true, true );
     public static final Block DEDLEF = register("dedlef", DedlefBlock::new, true, true );
+
+    public static final Block TOBACCO_PLANT = register("tobacco", TobaccoPlant::new, AbstractBlock.Settings.create()
+            .mapColor(state -> state.get(TobaccoPlant.AGE) >= TobaccoPlant.MAX_AGE-1 ? MapColor.YELLOW : MapColor.DARK_GREEN)
+            .noCollision()
+            .nonOpaque()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY), false, false );
+
+    private static Block register(String key, BlockConstructorFactory constructor, AbstractBlock.Settings settings, boolean shouldRegisterItem, boolean visible) {
+        Identifier identifier = Identifier.of(V8.MOD_ID, key);
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
+
+        return register(constructor.create(settings.registryKey(blockKey)), blockKey, shouldRegisterItem, visible);
+    }
 
     public static Block register(String key, BlockConstructorFactory constructor, boolean shouldRegisterItem, boolean visible) {
         Identifier identifier = Identifier.of(V8.MOD_ID, key);

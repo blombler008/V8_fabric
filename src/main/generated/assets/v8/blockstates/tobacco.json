@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "v8:block/tobacco_stage0"
+    },
+    "age=1": {
+      "model": "v8:block/tobacco_stage1"
+    },
+    "age=2": {
+      "model": "v8:block/tobacco_stage2"
+    },
+    "age=3": {
+      "model": "v8:block/tobacco_stage3"
+    },
+    "age=4": {
+      "model": "v8:block/tobacco_stage4"
+    },
+    "age=5": {
+      "model": "v8:block/tobacco_stage5"
+    },
+    "age=6": {
+      "model": "v8:block/tobacco_stage6"
+    },
+    "age=7": {
+      "model": "v8:block/tobacco_stage7"
+    },
+    "age=8": {
+      "model": "v8:block/tobacco_stage8"
+    },
+    "age=9": {
+      "model": "v8:block/tobacco_stage9"
+    }
+  }
+}

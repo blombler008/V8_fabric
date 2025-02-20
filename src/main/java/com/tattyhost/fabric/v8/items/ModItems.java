@@ -1,8 +1,13 @@
 package com.tattyhost.fabric.v8.items;
 
 import com.tattyhost.fabric.v8.V8;
+import com.tattyhost.fabric.v8.blocks.ModBlocks;
 import com.tattyhost.fabric.v8.utils.ItemConstructorFactory;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -11,6 +16,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class ModItems {
 
@@ -19,23 +25,23 @@ public class ModItems {
 
 
 
-    public static final Item CIGARETTE_ITEM = registerCustom("cigarette", CigaretteItem::new, true);
+    public static final Item CIGARETTE_ITEM = register("cigarette", CigaretteItem::new, true);
     public static final Item V8_ITEM = register("v8", false);
-    public static final Item TOBACCO_SEEDS = register("tobacco_seeds", true);
     public static final Item MAGIC_ASH_ITEM = register("magic_ash", true);
 
+    public static final Item TOBACCO_SEEDS = register("tobacco_seeds", createBlockItemWithUniqueName(ModBlocks.TOBACCO_PLANT), true);
 
 
-    public static Item registerCustom(String name, ItemConstructorFactory constructor, boolean visible) {
-        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, name));
+    public static Item register(String key, ItemConstructorFactory<Item> constructor, boolean visible) {
+        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, key));
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 
-        return registerCustom(constructor.create(settings), registryKey, visible);
+        return register(constructor.create(settings), registryKey, visible);
     }
 
-    public static Item registerCustom(Item item, RegistryKey<Item> registryKey, boolean visible) {
+    public static Item register(Item key, RegistryKey<Item> registryKey, boolean visible) {
         // Register the item.
-        Item registeredItem = Registry.register(Registries.ITEM, registryKey.getValue(), item);
+        Item registeredItem = Registry.register(Registries.ITEM, registryKey.getValue(), key);
 
         //V8.LOGGER.info("Registered item: " + registeredItem);
         // If the item is visible, add it to the list of visible items.
@@ -55,7 +61,7 @@ public class ModItems {
     public static Item register(Item.Settings itemSettings, RegistryKey<Item> registryKey, boolean visible) {
         // Register the item.
         Item item = new Item(itemSettings);
-        return registerCustom(item, registryKey, visible);
+        return register(item, registryKey, visible);
     }
 
     public static Item register(String name, boolean visible) {
@@ -63,6 +69,11 @@ public class ModItems {
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 
         return register(settings, registryKey, visible);
+    }
+
+
+    private static ItemConstructorFactory<Item> createBlockItemWithUniqueName(Block block) {
+        return settings -> new BlockItem(block, settings.useItemPrefixedTranslationKey());
     }
 
     public static void initialize() {
