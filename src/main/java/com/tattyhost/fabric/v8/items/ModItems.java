@@ -38,87 +38,121 @@ public class ModItems {
     // Getrocknete Tabakblätter, die nach dem Trocknungsprozess entstehen und weiterverarbeitet werden müssen.
     public static final Item TOBACCO_DRIED_LEAF = register("tobacco_dried_leaf", true);
 
+    // TODO: texture
     // Allgemeiner getrockneter Tabak, Basis für weitere Verarbeitungsschritte.
     public static final Item TOBACCO_DRIED = register("tobacco_dried", true);
 
+    // TODO: texture
     // Geschnittener Tabak für die Zigarettenherstellung.
     public static final Item TOBACCO_DRY_CUT = register("tobacco_dried_cut", true);
 
+    // TODO: texture
     // Geschredderter Tabak, alternative Form des geschnittenen Tabaks.
     public static final Item TOBACCO_DRY_SHREDDED = register("tobacco_dried_shredded", true);
 
+    // TODO: texture
     // Fermentierter Tabak, veredelter Tabak für eine bessere Qualität.
     public static final Item TOBACCO_DRY_CURED = register("tobacco_dried_cured", true);
 
+    // TODO: texture
     // Aromatisierter Tabak, Grundlage für aromatisierte Zigaretten.
     public static final Item TOBACCO_DRY_FLAVORED = register("tobacco_dried_flavored", true);
 
+    // TODO: texture
     // Geschredderter, aromatisierter Tabak.
     public static final Item TOBACCO_DRY_SHREDDED_FLAVORED = register("tobacco_dried_shredded_flavored", true);
 
+    // TODO: texture
     // Geschnittener, aromatisierter Tabak.
     public static final Item TOBACCO_DRY_CUT_FLAVORED = register("tobacco_dried_cut_flavored", true);
 
+    // TODO: texture
     // Fermentierter, aromatisierter Tabak.
     public static final Item TOBACCO_DRY_CURED_FLAVORED = register("tobacco_dried_cured_flavored", true);
 
+    // TODO: texture
     // Zigarettenpapier, wird für das Drehen von Zigaretten benötigt.
     public static final Item CIGARETTE_PAPER = register("cigarette_paper", true);
 
+    // TODO: texture
     // Standard-Zigarettenfilter.
     public static final Item CIGARETTE_FILTER = register("cigarette_filter", true);
 
+    // TODO: texture
     // Leere Zigarettenhülse ohne Filter.
     public static final Item CIGARETTE_TUBE_EMPTY = register("cigarette_tube_empty", true);
 
+    // TODO: texture
     // Vorgefertigte Zigarettenhülse.
     public static final Item CIGARETTE_TUBE = register("cigarette_tube", true);
 
+    // TODO: texture
     // Leere Zigarettenhülse mit Filter.
     public static final Item CIGARETTE_TUBE_EMPTY_FILTER = register("cigarette_tube_empty_filter", true);
 
+    // TODO: texture
     // Zigarettenhülse mit Filter.
     public static final Item CIGARETTE_TUBE_FILTER = register("cigarette_tube_filter", true);
 
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Zigarette mit geschnittenem Tabak.
     public static final Item CIGARETTE_CUT = register("cigarette_cut", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Zigarette mit geschreddertem Tabak.
     public static final Item CIGARETTE_SHREDDED = register("cigarette_shredded", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Zigarette mit fermentiertem Tabak.
     public static final Item CIGARETTE_CURED = register("cigarette_cured", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Aromatisierte Zigarette.
     public static final Item CIGARETTE_FLAVORED = register("cigarette_flavored", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Aromatisierte Zigarette mit geschreddertem Tabak.
     public static final Item CIGARETTE_SHREDDED_FLAVORED = register("cigarette_shredded_flavored", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Aromatisierte Zigarette mit geschnittenem Tabak.
     public static final Item CIGARETTE_CUT_FLAVORED = register("cigarette_cut_flavored", true);
 
+
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Aromatisierte Zigarette mit fermentiertem Tabak.
     public static final Item CIGARETTE_CURED_FLAVORED = register("cigarette_cured_flavored", true);
 
+    // TODO: texture
     // Asche, die nach dem Rauchen einer Zigarette übrig bleibt.
     public static final Item CIGARETTE_ASH = register("cigarette_ash", true);
 
+    // TODO: texture ... maybe block? block model?
     // Aschenbecher zum Sammeln von Asche.
     public static final Item ASH_TRAY = register("ash_tray", true);
 
+    // TODO: texture ... maybe block? block model?
     // Voller Aschenbecher mit gesammelter Asche.
     public static final Item ASH_TRAY_FULL = register("ash_tray_full", true);
 
+    // TODO: texture
     // Eine Zigarettenschachtel als Container für 21 Zigaretten.
     public static final Item CIGARETTE_PACK = register("cigarette_pack", true);
 
+    // TODO: texture
     // Leere Zigarettenschachtel.
     public static final Item CIGARETTE_PACK_EMPTY = register("cigarette_pack_empty", true);
 
+    // TODO: texture
     // Ein Zigarettenkarton, der 10 Zigarettenschachteln enthält.
     public static final Item CIGARETTE_CARTON = register("cigarette_carton", true);
 
+    // TODO: texture or make the item be a predifined item variant of cigarette item?
     // Illegale Schwarzmarkt-Zigarette, kann als Loot gefunden werden.
     public static final Item BLACK_MARKET_CIGARETTE = register("black_market_cigarette", true);
 
