@@ -1,6 +1,7 @@
 package com.tattyhost.fabric.v8.client.datagen;
 
-import com.tattyhost.fabric.v8.client.datagen.ModelGens.ModelGenerator;
+import com.tattyhost.fabric.v8.client.datagen.loots.LootTableProvider;
+import com.tattyhost.fabric.v8.client.datagen.models.ModelGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -14,7 +15,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         pack.addProvider(ItemTagProvider::new);
         pack.addProvider(BlockTagProvider::new);
-        pack.addProvider(LootTableProvider::new);
+        LootTableProvider.addLoots(pack);
         pack.addProvider(RecipeProvider::new);
 
         ModelGenerator.addModels(pack);

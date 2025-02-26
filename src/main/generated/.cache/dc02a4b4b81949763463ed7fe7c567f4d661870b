@@ -1,11 +1,17 @@
 // 1.21.4	-999999999-01-01T00:00:00	V8/Plant Model Definitions
+25038257587ca6b243584c3863f873aba266cef3 assets/v8/blockstates/cotton.json
 0ec8c585fe0e29c510ae6b6909dd9e46b3c0b5f0 assets/v8/blockstates/tobacco.json
 79ea6e747084d3266084beb92aac5cedba16c691 assets/v8/items/amerite_block.json
+397dce5f40cda475bd0393e7a7dd1babade65b70 assets/v8/items/cotton_seeds.json
 4169e73a82e291f1a961fcdd0b69ab214e9ae68f assets/v8/items/dedlef.json
 e8e9fd5df3462c1ba4877bb97719920b3c980ece assets/v8/items/guenter.json
 44c1ecf16be6bd2dff6363c169968a56a720c0a0 assets/v8/items/high_temp_furnace.json
 f860fed0f6b134bdc9e14a62cb68cc4765bcef75 assets/v8/items/tobacco_seeds.json
 e2db3a9f60f33b0a9d5ab9f452302e52357a6b8c assets/v8/items/v8_block.json
+93ddbae48b09553c5ade0dea1c6301f369235f0c assets/v8/models/block/cotton_stage0.json
+5857b0418a3357782c27f711ef9cb7891a174de7 assets/v8/models/block/cotton_stage1.json
+c29c2e9e3d2c4c59450f11424694bbdccfabd135 assets/v8/models/block/cotton_stage2.json
+b537172512c443087c88141f02a2b34cb7545989 assets/v8/models/block/cotton_stage3.json
 e2c5f7349b65cd41f0df194456972ac70aed8f19 assets/v8/models/block/tobacco_stage0.json
 910c39c8c1ad2cac34db7122f018e72ac4ca3a8f assets/v8/models/block/tobacco_stage1.json
 be6f2f255f159dbbd8f45f90f5ecf5918df66f6c assets/v8/models/block/tobacco_stage2.json
@@ -16,4 +22,5 @@ af1c68a6923dc672c5a70f6d5e245faab14688df assets/v8/models/block/tobacco_stage5.j
 3cf72669f199a55b592f06391f3b9d9d0b569c95 assets/v8/models/block/tobacco_stage7.json
 e3970cbe9135255b19df92aa9209161f39d0202e assets/v8/models/block/tobacco_stage8.json
 5c88638e1264cccc1ad6dfb11131331682574b41 assets/v8/models/block/tobacco_stage9.json
+5c084d543e142fbf607dd9731688fa600b5b6d91 assets/v8/models/item/cotton_seeds.json
 baf96ef5b814c01427d4cf822611098486540d1b assets/v8/models/item/tobacco_seeds.json

@@ -1,7 +1,7 @@
 package com.tattyhost.fabric.v8.items;
 
 import com.tattyhost.fabric.v8.V8;
-import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModPlants;
 import com.tattyhost.fabric.v8.utils.ItemConstructorFactory;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -14,19 +14,133 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@SuppressWarnings("unused")
 public class ModItems {
 
     public static final List<Item> ITEMS = new ArrayList<>();
     public static final List<Item> VISIBLE_ITEMS = new ArrayList<>();
+    public static final List<Item> NORMAL_VISIBLE_ITEMS = new ArrayList<>();
 
-
-
-    public static final Item CIGARETTE_ITEM = register("cigarette", CigaretteItem::new, true);
     public static final Item V8_ITEM = register("v8", false);
+
+    // Zigarette, ein spezielles Item, das geraucht werden kann.
+    public static final Item CIGARETTE_ITEM = register("cigarette", CigaretteItem::new, true);
+
+    // Magic Ash, ein spezielles Item, das durch das Rauchen von Zigaretten entsteht.
     public static final Item MAGIC_ASH_ITEM = register("magic_ash", true);
 
-    public static final Item TOBACCO_SEEDS = register("tobacco_seeds", createBlockItemWithUniqueName(ModBlocks.TOBACCO_PLANT), true);
+    // Tabakblätter, die von Tabakpflanzen geerntet werden.
+    public static final Item TOBACCO_LEAF = register("tobacco_leaf", true);
+
+    // Baumwolle, die von Baumwollpflanzen geerntet wird.
+    public static final Item COTTON = register("cotton", true);
+
+    // Getrocknete Tabakblätter, die nach dem Trocknungsprozess entstehen und weiterverarbeitet werden müssen.
+    public static final Item TOBACCO_DRIED_LEAF = register("tobacco_dried_leaf", true);
+
+    // Allgemeiner getrockneter Tabak, Basis für weitere Verarbeitungsschritte.
+    public static final Item TOBACCO_DRIED = register("tobacco_dried", true);
+
+    // Geschnittener Tabak für die Zigarettenherstellung.
+    public static final Item TOBACCO_DRY_CUT = register("tobacco_dried_cut", true);
+
+    // Geschredderter Tabak, alternative Form des geschnittenen Tabaks.
+    public static final Item TOBACCO_DRY_SHREDDED = register("tobacco_dried_shredded", true);
+
+    // Fermentierter Tabak, veredelter Tabak für eine bessere Qualität.
+    public static final Item TOBACCO_DRY_CURED = register("tobacco_dried_cured", true);
+
+    // Aromatisierter Tabak, Grundlage für aromatisierte Zigaretten.
+    public static final Item TOBACCO_DRY_FLAVORED = register("tobacco_dried_flavored", true);
+
+    // Geschredderter, aromatisierter Tabak.
+    public static final Item TOBACCO_DRY_SHREDDED_FLAVORED = register("tobacco_dried_shredded_flavored", true);
+
+    // Geschnittener, aromatisierter Tabak.
+    public static final Item TOBACCO_DRY_CUT_FLAVORED = register("tobacco_dried_cut_flavored", true);
+
+    // Fermentierter, aromatisierter Tabak.
+    public static final Item TOBACCO_DRY_CURED_FLAVORED = register("tobacco_dried_cured_flavored", true);
+
+    // Zigarettenpapier, wird für das Drehen von Zigaretten benötigt.
+    public static final Item CIGARETTE_PAPER = register("cigarette_paper", true);
+
+    // Standard-Zigarettenfilter.
+    public static final Item CIGARETTE_FILTER = register("cigarette_filter", true);
+
+    // Leere Zigarettenhülse ohne Filter.
+    public static final Item CIGARETTE_TUBE_EMPTY = register("cigarette_tube_empty", true);
+
+    // Vorgefertigte Zigarettenhülse.
+    public static final Item CIGARETTE_TUBE = register("cigarette_tube", true);
+
+    // Leere Zigarettenhülse mit Filter.
+    public static final Item CIGARETTE_TUBE_EMPTY_FILTER = register("cigarette_tube_empty_filter", true);
+
+    // Zigarettenhülse mit Filter.
+    public static final Item CIGARETTE_TUBE_FILTER = register("cigarette_tube_filter", true);
+
+    // Zigarette mit geschnittenem Tabak.
+    public static final Item CIGARETTE_CUT = register("cigarette_cut", true);
+
+    // Zigarette mit geschreddertem Tabak.
+    public static final Item CIGARETTE_SHREDDED = register("cigarette_shredded", true);
+
+    // Zigarette mit fermentiertem Tabak.
+    public static final Item CIGARETTE_CURED = register("cigarette_cured", true);
+
+    // Aromatisierte Zigarette.
+    public static final Item CIGARETTE_FLAVORED = register("cigarette_flavored", true);
+
+    // Aromatisierte Zigarette mit geschreddertem Tabak.
+    public static final Item CIGARETTE_SHREDDED_FLAVORED = register("cigarette_shredded_flavored", true);
+
+    // Aromatisierte Zigarette mit geschnittenem Tabak.
+    public static final Item CIGARETTE_CUT_FLAVORED = register("cigarette_cut_flavored", true);
+
+    // Aromatisierte Zigarette mit fermentiertem Tabak.
+    public static final Item CIGARETTE_CURED_FLAVORED = register("cigarette_cured_flavored", true);
+
+    // Asche, die nach dem Rauchen einer Zigarette übrig bleibt.
+    public static final Item CIGARETTE_ASH = register("cigarette_ash", true);
+
+    // Aschenbecher zum Sammeln von Asche.
+    public static final Item ASH_TRAY = register("ash_tray", true);
+
+    // Voller Aschenbecher mit gesammelter Asche.
+    public static final Item ASH_TRAY_FULL = register("ash_tray_full", true);
+
+    // Eine Zigarettenschachtel als Container für 21 Zigaretten.
+    public static final Item CIGARETTE_PACK = register("cigarette_pack", true);
+
+    // Leere Zigarettenschachtel.
+    public static final Item CIGARETTE_PACK_EMPTY = register("cigarette_pack_empty", true);
+
+    // Ein Zigarettenkarton, der 10 Zigarettenschachteln enthält.
+    public static final Item CIGARETTE_CARTON = register("cigarette_carton", true);
+
+    // Illegale Schwarzmarkt-Zigarette, kann als Loot gefunden werden.
+    public static final Item BLACK_MARKET_CIGARETTE = register("black_market_cigarette", true);
+
+
+    // Aromen
+    public static final Item MENTHOL_CRYSTALS = register("menthol_crystals", true);
+
+    public static final Item VANILLA_EXTRACT = register("vanilla_extract", true);
+    public static final Item APPLE_FLAVOR = register("apple_flavor", true);
+    public static final Item CARROT_FLAVOR = register("carrot_flavor", true);
+    public static final Item MELON_FLAVOR = register("melon_flavor", true);
+    public static final Item POTATO_FLAVOR = register("potato_flavor", true);
+    public static final Item PUMPKIN_FLAVOR = register("pumpkin_flavor", true);
+    public static final Item GLOWBERRY_FLAVOR = register("glowberry_flavor", true);
+    public static final Item SWEETBERRY_FLAVOR = register("sweetberry_flavor", true);
+    public static final Item MUSHROOM_FLAVOR = register("mushroom_flavor", true);
+    public static final Item HONEY_FLAVOR = register("honey_flavor", true);
+
+
+
+    public static final Item TOBACCO_SEEDS = register("tobacco_seeds", createBlockItemWithUniqueName(ModPlants.TOBACCO_PLANT), true);
+    public static final Item COTTON_SEEDS = register("cotton_seeds", createBlockItemWithUniqueName(ModPlants.COTTON_PLANT), true);
 
 
     public static Item register(String key, ItemConstructorFactory<Item> constructor, boolean visible) {
@@ -65,7 +179,10 @@ public class ModItems {
         RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, name));
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 
-        return register(settings, registryKey, visible);
+        Item item = register(settings, registryKey, visible);
+        if(visible)
+            NORMAL_VISIBLE_ITEMS.add(item);
+        return item;
     }
 
 

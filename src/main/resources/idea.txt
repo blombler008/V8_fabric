@@ -1,0 +1,92 @@
+==============================  | ==============================  | ==============================
+Kategorie                      |     Item/Block/Maschine                           Beschreibung
+------------------------------  | ------------------------------  | ------------------------------
+Pflanzen                       |     Tabakpflanze (Normal) (wächst in mehreren Wachstumsstufen, kann geerntet werden)
+                               |     Tabakpflanze (Menthol) (wächst in mehreren Wachstumsstufen, kann geerntet werden)
+                               |     Tabakpflanze (Vanille) (wächst in mehreren Wachstumsstufen, kann geerntet werden)
+                               |     Baumwollpflanze (für Filter)
+                               |
+------------------------------ | ------------------------------  | --------------------------------
+Rohstoffe                      |     Tabakblätter (geerntetes Material, muss weiterverarbeitet werden)
+                               |     Papier (wird für das Drehen der Zigaretten benötigt)
+                               |     Filter (separates Item zur Verbesserung der Zigarette)
+                                  \     Baumwolle (für selbstgemachte Filter)
+                                  \     Zellulose (für industrielle Filter)
+                                  \     Aktivkohle (für spezielle Filter, verbessert die Filterung)
+                                  \     Papier (für selbstgemachte Filter)
+                               |     Huelsen (fuer selbstgestopfte Zigaretten & Industriezigaretten)
+                               |     Aromen (z. B. Menthol, Vanille) (optionale Zusatzstoffe für spezielle Zigarettenarten)
+                                  \     Menthol (für Mentholzigaretten)
+                                  \     Vanille (für Vanillezigaretten)
+                                  \     Apfel (für Apfelzigaretten)
+                                  \     Karotte (für Karottenzigaretten)
+                                  \     Melone (für Melonenzigaretten)
+                                  \     Kartoffel (für Kartoffelzigaretten)
+                                  \     Kürbis (für Kürbiszigaretten)
+                                  \     Glowberry (für Glowberryzigaretten)
+                                  \     Sweetberry (für Sweetberryzigaretten)
+                                  \     Pilz (für Pilzzigaretten)
+                                  \     Honig (für Honigzigaretten)
+                               |     Zigarettenschachtel (Container für mehrere Zigaretten)
+                                  \     verschiedene Groessen? (21, 28, 45, 58)
+                               |     Zigarettenstange (Container für Zigarettenschachteln)
+                                  \     verschiedene Groessen? (5x, 10x, 20x, 50x)
+                               |     Baumwolle (für Filter, aus Baumwollpflanze)
+                               |     Zellulose (für Filter und Papier, aus Holz)
+                                  -     aus Holz (weitere Verarbeitung notwendig (z. B. Zerkleinern, einweichen, filtern zu "Linters"))
+                                  -     aus Baumwolle (weitere Verarbeitung notwendig "Linters")
+                                  -     aus Bambus (weitere Verarbeitung notwendig "Linters")
+                                  -     aus anderen Pflanzen (weitere Verarbeitung notwendig "Linters")
+                               |     SchwarmarktZigaretten (loot item)
+                               |     SchwarmarktZigarettenschachtel (loot item, immer 32 Zigaretten)
+------------------------------ | ------------------------------  | --------------------------------
+Verarbeitungsblöcke & Maschinen|     Trockengestell (zum Trocknen der Tabakblätter)
+                               |     Schneidemaschine (zum Zerkleinern der getrockneten Blätter in Tabak)
+                               |     Drehmaschine (kombiniert Tabak, Papier und Filter zu fertigen Zigaretten)
+                               |     Fermentationsfass (optional für bessere Qualität)
+                               |     Herstellungsmaschine für Papier (optional für spezielles Papier)
+                               |     Zigarettenroller (optional für handgemachte Zigaretten)
+                               |     Filtermaschine (optional für bessere Qualität)
+                               |     Industrie-Trocknungsanlage (optional für schnelleres Trocknen)
+                               |     Industrie-Schneidemaschine (optional für schnelleres Schneiden)
+                               |     Industrie-Drehmaschine (optional für schnelleres Drehen)
+                               |     Industrie-Filtermaschine (optional für bessere Qualität)
+                               |     Industrie-Fermentationsfass (optional für bessere Qualität)
+                               |     Aromatisierungsstation (optional für aromatisierte Zigaretten)
+------------------------------ | ------------------------------  | --------------------------------
+Endprodukte                    |     Zigarette (normale Version ohne Zusätze)
+                               |     Mentholzigarette (mit Mentholzusatz)
+                               |     Selbstgedrehte Zigarette (handgemacht, günstiger)
+                               |     Industriezigarette (bessere Qualität, hergestellt mit Maschinen)
+                               |     Zigarettenschachtel (Container für mehrere Zigaretten)
+                               |     Zigarettenpackung (Container für Zigarettenschachteln)
+------------------------------ | ------------------------------  | --------------------------------
+Sonstiges                      |     Gas-Feuerzeug (Zündquelle für Zigaretten)
+                               |     Streichhölzer
+                               |     Rauchpartikel & Statuseffekte beim Rauchen
+------------------------------ | ------------------------------  | --------------------------------
+Rezepte                        |     Tabakblätter -> Trockengestell -> getrocknete Tabakblätter
+                               |     getrocknete Tabakblätter -> Schneidemaschine -> Tabak
+                               |     Tabak + Papier + Filter -> Drehmaschine -> Zigarette
+                               |     Zigarette + Menthol -> Mentholzigarette
+                               |     Zigarette + Vanille -> Vanillezigarette
+                               |     Zigarette + Zigarettenschachtel -> Zigarettenschachtel mit Zigarette
+                               |     Zigarettenschachtel + Zigarettenpackung -> Zigarettenpackung mit Zigarettenschachtel
+------------------------------ | ------------------------------  | --------------------------------
+Statuseffekte                  |     Nikotinsucht (negativer Effekt bei zu häufigem Rauchen)
+                               |     Rauchringe (Effekt beim Rauchen)
+                               |     Unwohlsein (kurzer Effekt nach dem Rauchen)
+                               |     Entspannung (kurzer Effekt nach dem Rauchen)
+                               |     Schwindel (kurzer Effekt nach dem Rauchen)
+                               |     Husten (kurzer Effekt nach dem Rauchen)
+                               |     Schlechter Atem (kurzer Effekt nach dem Rauchen)
+                               |     Uebelkeit (kurzer Effekt nach dem Rauchen)
+                               |     Kopfschmerzen (kurzer Effekt nach dem Rauchen)
+                               |     Schlechte Laune (negativer Effekt von zu viel Rauchen & Nikotinsucht)
+------------------------------ | ------------------------------  | --------------------------------
+Events                         |     Rauchverbot (Event, das Rauchen in bestimmten Bereichen verbietet)
+                               |     Rauchpause (Event, das Rauchen in bestimmten Bereichen erlaubt)
+                               |     Rauchalarm (Event, das auf zu viel Rauch hinweist)
+                               |     Rauchvergiftung (Event, das bei zu viel Rauch Schaden verursacht)
+                               |     Rauchmelder (Block, der Rauch erkennt und Alarm auslöst)
+============================== | ==============================  | ==============================

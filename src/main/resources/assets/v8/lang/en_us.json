@@ -9,20 +9,18 @@
 
   "item.v8.dedlef": "Dedlef",
   "item.v8.amerite_block": "Amerite Block",
-  "item.v8.tobacco_seeds": "Tobacco Seeds",
 
-  "item.v8.tobacco_leaf": "Tobacco Leaf",
+  "item.v8.tobacco_dried_leaf": "Dried Tobacco Leaf",
   "item.v8.tobacco_dried": "Dried Tobacco",
-  "item.v8.tobacco": "Tobacco",
-
-  "item.v8.tobacco_dried_shredded": "Shredded Tobacco",
   "item.v8.tobacco_dried_cut": "Cut Tobacco",
+  "item.v8.tobacco_dried_shredded": "Shredded Tobacco",
   "item.v8.tobacco_dried_cured": "Cured Tobacco",
   "item.v8.tobacco_dried_flavored": "Flavored Tobacco",
   "item.v8.tobacco_dried_shredded_flavored": "Flavored Shredded Tobacco",
   "item.v8.tobacco_dried_cut_flavored": "Flavored Cut Tobacco",
   "item.v8.tobacco_dried_cured_flavored": "Flavored Cured Tobacco",
 
+  "item.v8.cigarette_paper": "Cigarette Paper",
   "item.v8.cigarette_filter": "Cigarette Filter",
   "item.v8.cigarette_tube_empty": "Empty Cigarette Tube",
   "item.v8.cigarette_tube": "Cigarette Tube",
@@ -31,8 +29,8 @@
 
   "item.v8.cigarette": "Cigarette",
   "item.v8.cigarette_ash": "Cigarette Ash",
-  "item.v8.cigarette_shredded": "Shredded Cigarette",
   "item.v8.cigarette_cut": "Cut Cigarette",
+  "item.v8.cigarette_shredded": "Shredded Cigarette",
   "item.v8.cigarette_cured": "Cured Cigarette",
   "item.v8.cigarette_flavored": "Flavored Cigarette",
   "item.v8.cigarette_shredded_flavored": "Flavored Shredded Cigarette",
@@ -49,6 +47,26 @@
   "item.v8.cigarette_pack": "Cigarette Pack",
   "item.v8.cigarette_pack_empty": "Empty Cigarette Pack",
   "item.v8.cigarette_pack.tooltip": "A pack of cigarettes. Contains 21 cigarettes.",
+
+  "item.v8.black_market_cigarette": "Black Market Cigarette",
+
+  "item.v8.menthol_crystals": "Menthol Crystals",
+  "item.v8.vanilla_extract": "Vanilla Extract",
+  "item.v8.apple_flavor": "Apple Flavor",
+  "item.v8.carrot_flavor": "Carrot Flavor",
+  "item.v8.melon_flavor": "Melon Flavor",
+  "item.v8.potato_flavor": "Potato Flavor",
+  "item.v8.pumpkin_flavor": "Pumpkin Flavor",
+  "item.v8.glowberry_flavor": "Glowberry Flavor",
+  "item.v8.sweetberry_flavor": "Sweetberry Flavor",
+  "item.v8.mushroom_flavor": "Mushroom Flavor",
+  "item.v8.honey_flavor": "Honey Flavor",
+
+
+  "item.v8.cotton_seeds": "Cotton Seeds",
+  "item.v8.tobacco_seeds": "Tobacco Seeds",
+
+  "item.v8.cotton": "Cotton",
 
 
   "item.v8.high_temp_furnace": "High Temperature Furnace",

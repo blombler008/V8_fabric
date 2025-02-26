@@ -1,10 +1,10 @@
 package com.tattyhost.fabric.v8.client.datagen;
 
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModMachines;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("unused")
 public class BlockTagProvider extends FabricTagProvider<Block> {
 
     public static final TagKey<Block> NEEDS_WOODEN_TOOL = TagKey.of(RegistryKeys.BLOCK, Identifier.ofVanilla("needs_tool_level_0"));
@@ -28,15 +29,15 @@ public class BlockTagProvider extends FabricTagProvider<Block> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        mineableTag(ModBlocks.V8_BLOCK, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
-        mineableTag(ModBlocks.AMERITE_BLOCK, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
-        mineableTag(ModBlocks.HIGH_TEMP_FURNACE, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
-        mineableTag(ModBlocks.GUENTER, BlockTags.PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL);
-        mineableTag(ModBlocks.DEDLEF, BlockTags.PICKAXE_MINEABLE, NEEDS_NETHERITE_TOOL);
+        addMineableTag(ModBlocks.V8_BLOCK, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
+        addMineableTag(ModBlocks.AMERITE_BLOCK, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
+        addMineableTag(ModMachines.HIGH_TEMP_FURNACE, BlockTags.PICKAXE_MINEABLE, NEEDS_IRON_TOOL);
+        addMineableTag(ModMachines.GUENTER, BlockTags.PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL);
+        addMineableTag(ModMachines.DEDLEF, BlockTags.PICKAXE_MINEABLE, NEEDS_NETHERITE_TOOL);
     }
 
 
-    private void mineableTag(Block block, TagKey<Block> toolTag, TagKey<Block> materialTag) {
+    private void addMineableTag(Block block, @SuppressWarnings("SameParameterValue") TagKey<Block> toolTag, TagKey<Block> materialTag) {
         if(materialTag == NEEDS_NETHERITE_TOOL) {
             getOrCreateTagBuilder(toolTag).add(block);
             this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL).add(block);

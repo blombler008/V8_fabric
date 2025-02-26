@@ -3,6 +3,8 @@ package com.tattyhost.fabric.v8;
 import com.mojang.logging.LogUtils;
 import com.tattyhost.fabric.v8.blocks.ModBlockEntityTypes;
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModMachines;
+import com.tattyhost.fabric.v8.blocks.ModPlants;
 import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.items.ModTabs;
 import com.tattyhost.fabric.v8.screens.ModScreenHandlers;
@@ -18,11 +20,14 @@ public class V8 implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        LOGGER.info("Initializing V8");
         ModItems.initialize();
+        ModPlants.initialize();
         ModBlocks.initialize();
+        ModMachines.initialize();
         ModTabs.initialize();
         ModBlockEntityTypes.initialize();
         ModScreenHandlers.initialize();
-
+        LOGGER.info("V8 - Tobacco - initialized");
     }
 }

@@ -1,7 +1,8 @@
-package com.tattyhost.fabric.v8.client.datagen.ModelGens;
+package com.tattyhost.fabric.v8.client.datagen.models;
 
 import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModMachines;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
 import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.utils.Strings;
@@ -34,8 +35,8 @@ public class ModelGenerator extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator generator) {
         generator.registerSimpleCubeAll(ModBlocks.V8_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMERITE_BLOCK);
-        generator.registerSimpleCubeAll(ModBlocks.GUENTER);
-        generator.registerSimpleCubeAll(ModBlocks.DEDLEF);
+        generator.registerSimpleCubeAll(ModMachines.GUENTER);
+        generator.registerSimpleCubeAll(ModMachines.DEDLEF);
         highTempFurnace(generator);
         // Custom block model on lower half of block suffix with _lower and upper half of block suffix with _upper
         // on High Temp Furnace
@@ -44,7 +45,7 @@ public class ModelGenerator extends FabricModelProvider {
 
     }
     private void highTempFurnace(BlockStateModelGenerator generator) {
-        HighTempFurnaceBlock block = (HighTempFurnaceBlock) ModBlocks.HIGH_TEMP_FURNACE;
+        HighTempFurnaceBlock block = (HighTempFurnaceBlock) ModMachines.HIGH_TEMP_FURNACE;
 
         VariantsBlockStateSupplier supplier = VariantsBlockStateSupplier.create(block)
                 .coordinate(BlockStateVariantMap.create(Properties.LIT, Properties.HORIZONTAL_FACING, Properties.DOUBLE_BLOCK_HALF)
@@ -64,11 +65,11 @@ public class ModelGenerator extends FabricModelProvider {
         generator.blockStateCollector.accept(supplier);
         final String s = Strings.BLOCK_HIGH_TEMP_FURNACE_NAME + "_item";
         Identifier itemModelId = Identifier.of(V8.MOD_ID, "block/" + s);
-        generator.registerParentedItemModel(ModBlocks.HIGH_TEMP_FURNACE, itemModelId);
+        generator.registerParentedItemModel(ModMachines.HIGH_TEMP_FURNACE, itemModelId);
     }
 
 
-    public static ItemModel.Unbaked createModelWithInHandAndGroundVariant(ItemModel.Unbaked model, ItemModel.Unbaked inHandModel, ItemModel.Unbaked inUseModel) {
+    public static ItemModel.Unbaked createModelWithInHandAndGroundVariant(ItemModel.Unbaked model, ItemModel.Unbaked inHandModel, @SuppressWarnings("unused") ItemModel.Unbaked inUseModel) {
         DisplayContextProperty displayContextProperty = new DisplayContextProperty();
 //        ItemModels.usingItemProperty();
 
@@ -102,7 +103,11 @@ public class ModelGenerator extends FabricModelProvider {
 
         generator.register(ModItems.V8_ITEM, Models.GENERATED);
         registerWithInHandModel(generator, ModItems.CIGARETTE_ITEM);
-        generator.register(ModItems.MAGIC_ASH_ITEM, Models.GENERATED);
+
+        for (Item item : ModItems.NORMAL_VISIBLE_ITEMS) {
+            generator.register(item, Models.GENERATED);
+        }
+
 //        generator.register(ModBlocks.V8_BLOCK.asItem(), Models.CUBE_ALL);
     }
 

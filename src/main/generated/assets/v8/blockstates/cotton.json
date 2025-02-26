@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "v8:block/cotton_stage0"
+    },
+    "age=1": {
+      "model": "v8:block/cotton_stage1"
+    },
+    "age=2": {
+      "model": "v8:block/cotton_stage2"
+    },
+    "age=3": {
+      "model": "v8:block/cotton_stage3"
+    }
+  }
+}

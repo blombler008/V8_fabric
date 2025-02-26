@@ -1,17 +1,15 @@
 package com.tattyhost.fabric.v8.client.datagen;
 
-import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModMachines;
 import com.tattyhost.fabric.v8.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
-import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -43,7 +41,7 @@ public class RecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.CRAFTING_TABLE), conditionsFromItem(Items.CRAFTING_TABLE))
                         .offerTo(exporter);
 
-                this.createShaped(RecipeCategory.MISC, ModBlocks.DEDLEF, 1)
+                this.createShaped(RecipeCategory.MISC, ModMachines.DEDLEF, 1)
                         .pattern("BBB")
                         .pattern("BIB")
                         .pattern("BBB")

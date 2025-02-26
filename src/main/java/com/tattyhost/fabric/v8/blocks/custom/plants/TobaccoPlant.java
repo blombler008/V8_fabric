@@ -1,8 +1,8 @@
 package com.tattyhost.fabric.v8.blocks.custom.plants;
 
-import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 import com.tattyhost.fabric.v8.items.ModItems;
+import com.tattyhost.fabric.v8.utils.ModUtils;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
@@ -19,23 +19,7 @@ public class TobaccoPlant extends CropBlock {
     private static final double HEIGHTMIN = 2.0D;
     private static final boolean LINIAR = false;
 
-    private static final VoxelShape[] AGE_TO_SHAPE = shapeOnHeights();
-
-    private static VoxelShape[] shapeOnHeights() {
-
-        VoxelShape[] shapes = new VoxelShape[MAX_AGE+1];
-        for(int j = 0; j <= MAX_AGE; ++j) {
-            double height = HEIGHTMIN;
-            double lin = LINIAR ? (HEIGHTMIN + (HEIGHTMAX - HEIGHTMIN) * (double)j / (double)MAX_AGE) : (HEIGHTMAX * (double)j / (double)MAX_AGE);
-            if(lin > HEIGHTMIN) {
-                height = lin;
-            }
-
-            shapes[j] = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, height, 16.0D);
-            LogUtils.getLogger().info("Shape " + j + " = " + shapes[j]);
-        }
-        return shapes;
-    }
+    private static final VoxelShape[] AGE_TO_SHAPE = ModUtils.shapeOnHeights(HEIGHTMAX, HEIGHTMIN, MAX_AGE, LINIAR);
 
     public static final MapCodec<TobaccoPlant> CODEC = createCodec(TobaccoPlant::new);
 
@@ -76,10 +60,11 @@ public class TobaccoPlant extends CropBlock {
         return world.getBlockState(pos.down()).isOf(Blocks.FARMLAND);
     }
 
-    @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.FARMLAND);
-    }
+//    For later use TODO: Implement custom soils
+//    @Override
+//    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+//        return floor.isOf(Blocks.FARMLAND);
+//    }
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

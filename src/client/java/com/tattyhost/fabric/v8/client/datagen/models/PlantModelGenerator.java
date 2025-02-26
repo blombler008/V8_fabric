@@ -1,6 +1,7 @@
-package com.tattyhost.fabric.v8.client.datagen.ModelGens;
+package com.tattyhost.fabric.v8.client.datagen.models;
 
-import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModPlants;
+import com.tattyhost.fabric.v8.blocks.custom.plants.CottonPlant;
 import com.tattyhost.fabric.v8.blocks.custom.plants.TobaccoPlant;
 import com.tattyhost.fabric.v8.items.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -19,7 +20,8 @@ public class PlantModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        registerCrop(blockStateModelGenerator, ModBlocks.TOBACCO_PLANT, TobaccoPlant.AGE, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        registerCrop(blockStateModelGenerator, ModPlants.TOBACCO_PLANT, TobaccoPlant.AGE, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        registerCrop(blockStateModelGenerator, ModPlants.COTTON_PLANT, CottonPlant.AGE, 0, 1, 2, 3);
     }
 
     public final void registerCrop(BlockStateModelGenerator blockStateModelGenerator, Block crop, Property<Integer> ageProperty, int... ageTextureIndices) {
@@ -44,6 +46,7 @@ public class PlantModelGenerator extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.TOBACCO_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COTTON_SEEDS, Models.GENERATED);
     }
 
 

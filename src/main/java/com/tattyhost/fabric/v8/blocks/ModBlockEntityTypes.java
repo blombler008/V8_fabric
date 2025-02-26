@@ -18,7 +18,7 @@ public class ModBlockEntityTypes {
             "high_temp_furnace",
             // For versions 1.21.2 and above,
             // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
-            FabricBlockEntityTypeBuilder.create(HighTempFurnaceBlockEntity::new, ModBlocks.HIGH_TEMP_FURNACE).build()
+            FabricBlockEntityTypeBuilder.create(HighTempFurnaceBlockEntity::new, ModMachines.HIGH_TEMP_FURNACE).build()
     );
 
 
@@ -26,7 +26,7 @@ public class ModBlockEntityTypes {
             "guenter",
             // For versions 1.21.2 and above,
             // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
-            FabricBlockEntityTypeBuilder.create(GuenterBlockEntity::new, ModBlocks.GUENTER).build()
+            FabricBlockEntityTypeBuilder.create(GuenterBlockEntity::new, ModMachines.GUENTER).build()
     );
 
     public static void initialize() {
