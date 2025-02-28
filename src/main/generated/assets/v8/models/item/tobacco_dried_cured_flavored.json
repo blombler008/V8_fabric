@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "v8:item/tobacco_dried_cured_flavored"
-  }
-}

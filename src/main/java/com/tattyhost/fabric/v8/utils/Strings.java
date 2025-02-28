@@ -21,6 +21,11 @@ public class Strings {
     // TODO: Add more block translation keys here
     // TODO: Add more container translation keys here
     // TODO: Make Some Item Translation Keys to Block Translation Keys
+
+    public static final String ITEM_ASH_TREY_TRANSLATION_KEY                = "item.v8.ash_tray";
+    public static final String ITEM_ASH_TREY_TOOLTIP_TRANSLATION_KEY        = "item.v8.ash_tray.tooltip";
+    public static final String ITEM_ASH_TREY_FULL_TOOLTIP_TRANSLATION_KEY   = "item.v8.ash_tray_full.tooltip";
+
     public static final String BLOCK_TOBACCO_PLANT_TRANSLATION_KEY          = "block.v8.tobacco_plant";
     public static final String BLOCK_AMERITE_TRANSLATION_KEY                = "block.v8.amerite";
     public static final String BLOCK_V8_BLOCK_TRANSLATION_KEY               = "block.v8.v8_block";

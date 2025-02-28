@@ -104,6 +104,11 @@ public class ModelGenerator extends FabricModelProvider {
         generator.register(ModItems.V8_ITEM, Models.GENERATED);
         registerWithInHandModel(generator, ModItems.CIGARETTE_ITEM);
 
+        generator.register(ModItems.ASH_TRAY, Models.GENERATED);
+        generator.register(ModItems.ASH_TRAY_FULL, Models.GENERATED);
+
+        generator.register(ModItems.TOBACCO, Models.GENERATED);
+
         for (Item item : ModItems.NORMAL_VISIBLE_ITEMS) {
             generator.register(item, Models.GENERATED);
         }
