@@ -16,6 +16,10 @@ import java.util.List;
 public class AshTrayItem extends BlockItem {
     public AshTrayItem(Settings settings) {
         super(ModBlocks.ASH_TRAY, settings);
+
+        // get item id here
+
+
     }
 
     @Override

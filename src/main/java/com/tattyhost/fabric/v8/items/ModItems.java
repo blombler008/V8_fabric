@@ -81,11 +81,11 @@ public class ModItems {
     // Zigarettenhülse mit Filter.
     public static final Item CIGARETTE_TUBE_FILTER = register("cigarette_tube_filter", true);
 
-    // TODO: texture ... maybe block? block model?
+    // TODO: texture ... block model ohne Asche
     // Aschenbecher zum Sammeln von Asche.
     public static final Item ASH_TRAY = register("ash_tray", AshTrayItem::new, true);
 
-    // TODO: texture ... maybe block? block model?
+    // TODO: texture ... block model mit Asche
     // Voller Aschenbecher mit gesammelter Asche.
     public static final Item ASH_TRAY_FULL = register("ash_tray_full", AshTrayItem::new, true);
 

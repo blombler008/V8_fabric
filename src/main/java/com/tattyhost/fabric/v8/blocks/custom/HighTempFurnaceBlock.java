@@ -133,6 +133,10 @@ public class HighTempFurnaceBlock extends BlockWithEntity  {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         // Make sure to check world.isClient if you only want to tick only on serverside.
 
+        if(world.isClient) {
+            return null;
+        }
+
         if(state.get(HALF) == DoubleBlockHalf.UPPER) {
             return null;
         }
