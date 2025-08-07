@@ -1,19 +1,21 @@
 package com.tattyhost.fabric.v8.items;
 
+import com.tattyhost.fabric.v8.blocks.ModBlocks;
+import com.tattyhost.fabric.v8.blocks.ModMachines;
 import com.tattyhost.fabric.v8.utils.Strings;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.text.CharacterVisitor;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
 
-public class AshTreyItem extends Item {
-    public AshTreyItem(Settings settings) {
-        super(settings);
+public class AshTrayItem extends BlockItem {
+    public AshTrayItem(Settings settings) {
+        super(ModBlocks.ASH_TRAY, settings);
     }
 
     @Override

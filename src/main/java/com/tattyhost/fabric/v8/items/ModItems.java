@@ -83,11 +83,11 @@ public class ModItems {
 
     // TODO: texture ... maybe block? block model?
     // Aschenbecher zum Sammeln von Asche.
-    public static final Item ASH_TRAY = register("ash_tray", AshTreyItem::new, true);
+    public static final Item ASH_TRAY = register("ash_tray", AshTrayItem::new, true);
 
     // TODO: texture ... maybe block? block model?
     // Voller Aschenbecher mit gesammelter Asche.
-    public static final Item ASH_TRAY_FULL = register("ash_tray_full", AshTreyItem::new, true);
+    public static final Item ASH_TRAY_FULL = register("ash_tray_full", AshTrayItem::new, true);
 
     // TODO: texture
     // Eine Zigarettenschachtel als Container für 21 Zigaretten.

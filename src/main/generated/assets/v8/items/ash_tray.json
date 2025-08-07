@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "v8:item/ash_tray"
+    "model": "v8:block/ash_tray"
   }
 }

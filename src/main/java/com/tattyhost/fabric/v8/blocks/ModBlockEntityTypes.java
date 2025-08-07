@@ -1,6 +1,7 @@
 package com.tattyhost.fabric.v8.blocks;
 
 import com.tattyhost.fabric.v8.V8;
+import com.tattyhost.fabric.v8.blocks.custom.AshTrayBlockEntity;
 import com.tattyhost.fabric.v8.blocks.custom.GuenterBlockEntity;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -27,6 +28,13 @@ public class ModBlockEntityTypes {
             // For versions 1.21.2 and above,
             // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
             FabricBlockEntityTypeBuilder.create(GuenterBlockEntity::new, ModMachines.GUENTER).build()
+    );
+
+    public static final BlockEntityType<AshTrayBlockEntity> ASH_TRAY_BLOCK_ENTITY_TYPE = register(
+            "ash_trey",
+            // For versions 1.21.2 and above,
+            // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
+            FabricBlockEntityTypeBuilder.create(AshTrayBlockEntity::new, ModBlocks.ASH_TRAY).build()
     );
 
     public static void initialize() {
