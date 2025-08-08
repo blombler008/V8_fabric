@@ -2,6 +2,7 @@ package com.tattyhost.fabric.v8.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.tattyhost.fabric.v8.blocks.ModBlockEntityTypes;
+import com.tattyhost.fabric.v8.items.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -9,8 +10,10 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
@@ -36,7 +39,16 @@ public class AshTrayBlock extends BlockWithEntity {
         setDefaultState(getStateManager().getDefaultState().with(LEVEL, 0));
     }
 
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        ItemStack stack = ctx.getStack();
+        int level = 0;
 
+        if (stack.isOf(ModItems.ASH_TRAY_FULL)) {
+            level = 8;
+        }
+        return this.getDefaultState().with(LEVEL, level);
+    }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
@@ -79,6 +91,15 @@ public class AshTrayBlock extends BlockWithEntity {
         return ActionResult.SUCCESS;
     }
 
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(LEVEL);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.INVISIBLE;
+    }
 
     @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {

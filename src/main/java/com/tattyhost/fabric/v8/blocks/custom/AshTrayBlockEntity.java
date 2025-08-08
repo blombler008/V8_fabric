@@ -11,6 +11,10 @@ public class AshTrayBlockEntity extends BlockEntity {
         super(ModBlockEntityTypes.ASH_TRAY_BLOCK_ENTITY_TYPE, pos, state);
     }
 
+    public int getAshLevel() {
+        return getCachedState().getOrEmpty(AshTrayBlock.LEVEL).orElse(0);
+    }
+
     public static void tick(World world, BlockPos blockPos, BlockState blockState, AshTrayBlockEntity blockEntity) {
 
     }

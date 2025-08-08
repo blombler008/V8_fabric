@@ -14,6 +14,7 @@ public class ModBlocks {
     public static final Block V8_BLOCK = register("v8_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(1.0f).resistance(6.0f), true, true );
     public static final Block AMERITE_BLOCK = register("amerite_block", AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).hardness(2.0f).resistance(2.0f), true, true );
 
+
     private static final AbstractBlock.Settings ASH_TRAY_SETTINGS = AbstractBlock.Settings.create()
             .pistonBehavior(PistonBehavior.DESTROY)
             .mapColor(MapColor.STONE_GRAY)

@@ -9,6 +9,7 @@ import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.items.ModTabs;
 import com.tattyhost.fabric.v8.screens.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 
 
@@ -17,6 +18,9 @@ public class V8 implements ModInitializer {
     public static final String MOD_ID = "v8";
     public static Logger LOGGER = LogUtils.getLogger();
 
+    public static Identifier id(String path) {
+        return Identifier.of(MOD_ID, path);
+    }
 
     @Override
     public void onInitialize() {

@@ -37,7 +37,7 @@ public class ModelGenerator extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.AMERITE_BLOCK);
         generator.registerSimpleCubeAll(ModMachines.GUENTER);
         generator.registerSimpleCubeAll(ModMachines.DEDLEF);
-        generator.registerSimpleState(ModBlocks.ASH_TRAY);
+//        generator.registerSimpleState(ModBlocks.ASH_TRAY);
         highTempFurnace(generator);
         // Custom block model on lower half of block suffix with _lower and upper half of block suffix with _upper
         // on High Temp Furnace

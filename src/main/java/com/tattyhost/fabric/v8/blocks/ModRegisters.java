@@ -18,14 +18,14 @@ public class ModRegisters {
 
 
     public static Block register(String key, BlockConstructorFactory<Block> constructor, AbstractBlock.Settings settings, boolean shouldRegisterItem, boolean visible) {
-        Identifier identifier = Identifier.of(V8.MOD_ID, key);
+        Identifier identifier = V8.id(key);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
 
         return register(constructor.create(settings.registryKey(blockKey)), blockKey, shouldRegisterItem, visible);
     }
 
     public static Block register(String key, BlockConstructorFactory<Block> constructor, boolean shouldRegisterItem, boolean visible) {
-        Identifier identifier = Identifier.of(V8.MOD_ID, key);
+        Identifier identifier = V8.id(key);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
 
         Block block = constructor.create(
@@ -40,7 +40,7 @@ public class ModRegisters {
     }
 
     public static Block register(String key, AbstractBlock.Settings blockSettings, boolean shouldRegisterItem, boolean visible) {
-        Identifier identifier = Identifier.of(V8.MOD_ID, key);
+        Identifier identifier = V8.id(key);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
 
         Block block = new Block(blockSettings.registryKey(blockKey));

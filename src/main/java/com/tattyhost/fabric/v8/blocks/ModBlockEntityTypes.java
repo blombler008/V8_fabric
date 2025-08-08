@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlockEntityTypes {
     public static <T extends BlockEntityType<?>> T register(String path, T blockEntityType) {
-        return Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(V8.MOD_ID, path), blockEntityType);
+        return Registry.register(Registries.BLOCK_ENTITY_TYPE, V8.id(path), blockEntityType);
     }
 
     public static final BlockEntityType<HighTempFurnaceBlockEntity> HIGH_TEMP_FURNACE_BLOCK_ENTITY_TYPE = register(

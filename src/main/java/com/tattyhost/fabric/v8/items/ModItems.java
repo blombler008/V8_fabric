@@ -122,7 +122,7 @@ public class ModItems {
 
 
     public static Item register(String key, ItemConstructorFactory<Item> constructor, boolean visible) {
-        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, key));
+        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, V8.id(key));
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 
         return register(constructor.create(settings), registryKey, visible);
@@ -130,7 +130,7 @@ public class ModItems {
 
 
     public static Item register(String key, ItemConstructorFactory<Item> constructor, Item.Settings settings, boolean visible) {
-        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, key));
+        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, V8.id(key));
         settings.registryKey(registryKey);
 
         return register(constructor.create(settings), registryKey, visible);
@@ -161,8 +161,8 @@ public class ModItems {
         return register(item, registryKey, visible);
     }
 
-    public static Item register(String name, boolean visible) {
-        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(V8.MOD_ID, name));
+    public static Item register(String key, boolean visible) {
+        RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, V8.id(key));
         Item.Settings settings = new Item.Settings().registryKey(registryKey);
 
         Item item = register(settings, registryKey, visible);

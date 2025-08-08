@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 public class ModTabs {
 
-    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(V8.MOD_ID, "item_group"));
+    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), V8.id("item_group"));
     private static Item GROUP_ICON = ModItems.V8_ITEM;
     public static ItemGroup CUSTOM_ITEM_GROUP  = FabricItemGroup.builder()
             .icon(() -> new ItemStack(GROUP_ICON))
