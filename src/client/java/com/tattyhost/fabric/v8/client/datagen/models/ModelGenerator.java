@@ -4,11 +4,13 @@ import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModBlocks;
 import com.tattyhost.fabric.v8.blocks.ModMachines;
 import com.tattyhost.fabric.v8.blocks.custom.HighTempFurnaceBlock;
+import com.tattyhost.fabric.v8.client.model.AshTrayModel;
 import com.tattyhost.fabric.v8.items.ModItems;
 import com.tattyhost.fabric.v8.utils.Strings;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.block.Block;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.item.model.ItemModel;
@@ -37,15 +39,31 @@ public class ModelGenerator extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.AMERITE_BLOCK);
         generator.registerSimpleCubeAll(ModMachines.GUENTER);
         generator.registerSimpleCubeAll(ModMachines.DEDLEF);
-//        generator.registerSimpleState(ModBlocks.ASH_TRAY);
-        highTempFurnace(generator);
+        registerAshTray(generator);
+        registerHighTempFurnace(generator);
         // Custom block model on lower half of block suffix with _lower and upper half of block suffix with _upper
         // on High Temp Furnace
         // also register facing property for block state
 
 
     }
-    private void highTempFurnace(BlockStateModelGenerator generator) {
+
+
+    private void registerAshTray(BlockStateModelGenerator generator) {
+        Block block = ModBlocks.ASH_TRAY;
+        Identifier modelId = V8.id("block/ash_tray");
+        Identifier particleId = V8.id("block/steel_block");
+
+        VariantsBlockStateSupplier supplier = VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(Properties.LEVEL_8)
+                        .register(level -> BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, modelId)));
+
+        Models.PARTICLE.upload(block, TextureMap.particle(particleId), generator.modelCollector);
+        generator.blockStateCollector.accept(supplier);
+    }
+
+    private void registerHighTempFurnace(BlockStateModelGenerator generator) {
         HighTempFurnaceBlock block = (HighTempFurnaceBlock) ModMachines.HIGH_TEMP_FURNACE;
 
         VariantsBlockStateSupplier supplier = VariantsBlockStateSupplier.create(block)
@@ -69,7 +87,6 @@ public class ModelGenerator extends FabricModelProvider {
         generator.registerParentedItemModel(ModMachines.HIGH_TEMP_FURNACE, itemModelId);
     }
 
-
     public static ItemModel.Unbaked createModelWithInHandAndGroundVariant(ItemModel.Unbaked model, ItemModel.Unbaked inHandModel, @SuppressWarnings("unused") ItemModel.Unbaked inUseModel) {
         DisplayContextProperty displayContextProperty = new DisplayContextProperty();
 //        ItemModels.usingItemProperty();
@@ -89,7 +106,6 @@ public class ModelGenerator extends FabricModelProvider {
         generator.output.accept(item, createModelWithInHandAndGroundVariant(unbaked, unbakedInHand, null/*unbakedInUse*/));
     }
 
-    // Methode zur Berechnung der Rotation
     public VariantSettings.Rotation getRotationForFace(Direction face) {
         return switch (face) {
             case NORTH -> VariantSettings.Rotation.R0;
@@ -99,15 +115,31 @@ public class ModelGenerator extends FabricModelProvider {
             default -> VariantSettings.Rotation.R0; // Default falls was schiefgeht
         };
     }
+
+    private void registerAshTrayItemModels(ItemModelGenerator generator) {
+
+        // Leerer Aschenbecher -> nutzt 3D-Blockmodell "v8:block/ash_tray_item"
+        {
+            var parent = V8.id("block/ash_tray_item");
+            var model  = ItemModels.basic(parent);
+            generator.output.accept(ModItems.ASH_TRAY, model);
+        }
+
+        // Voller Aschenbecher -> nutzt 3D-Blockmodell "v8:block/ash_tray_full_item"
+        {
+            var parent = V8.id("block/ash_tray_full_item");
+            var model  = ItemModels.basic(parent);
+            generator.output.accept(ModItems.ASH_TRAY_FULL, model);
+        }
+
+    }
+
     @Override
     public void generateItemModels(ItemModelGenerator generator) {
 
         generator.register(ModItems.V8_ITEM, Models.GENERATED);
         registerWithInHandModel(generator, ModItems.CIGARETTE_ITEM);
-
-        generator.register(ModItems.ASH_TRAY, Models.GENERATED);
-        generator.register(ModItems.ASH_TRAY_FULL, Models.GENERATED);
-
+        registerAshTrayItemModels(generator);
         generator.register(ModItems.TOBACCO, Models.GENERATED);
 
         for (Item item : ModItems.NORMAL_VISIBLE_ITEMS) {

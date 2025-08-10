@@ -1,13 +1,14 @@
 // 1.21.4	-999999999-01-01T00:00:00	V8/General Model Definitions
 5d3ce6653df3c3d7bdda946527e22056e182f042 assets/v8/blockstates/amerite_block.json
+7dcce5114ea1f7272ad8d0e745f7cb32e6e21470 assets/v8/blockstates/ash_tray.json
 a46847d53043ebcc1c6925fbe9cbe2d613726b25 assets/v8/blockstates/dedlef.json
 ef58dc5f91c0f4eacf791a299470c8a85fb21dd9 assets/v8/blockstates/guenter.json
 320134b0dfa9a63cefdb6c90ef0c5db71eda6463 assets/v8/blockstates/high_temp_furnace.json
 2da0bf8118a1396d1031d16b6eb0855d6b3c8976 assets/v8/blockstates/v8_block.json
 79ea6e747084d3266084beb92aac5cedba16c691 assets/v8/items/amerite_block.json
 b595c7edfe6d1a9eedc34f1f4d15ac651091ddf6 assets/v8/items/apple_flavor.json
-ec05227a86c9598a414fe9769d825ae101c126cf assets/v8/items/ash_tray.json
-5da9aaa9eac0ec0aef592ff7dbb68b24a9eef32e assets/v8/items/ash_tray_full.json
+557d82ec28c8b7ce3573453309bda0297066c0ba assets/v8/items/ash_tray.json
+cd4aa791f22e26962202b4542a5b771b26415b2d assets/v8/items/ash_tray_full.json
 18cac406bb716683bc782a6dbc49bffd6da08bea assets/v8/items/carrot_flavor.json
 3577f4dffc1ebdc3e6c20fd31fe9d147a97f2c41 assets/v8/items/cigarette.json
 79ebf54eba65c73d42f85b44f269a24dfb0362a1 assets/v8/items/cigarette_carton.json
@@ -41,12 +42,11 @@ a07a97324dc4d0a649c6b5f431450a9564d1107d assets/v8/items/tobacco_leaf.json
 e2db3a9f60f33b0a9d5ab9f452302e52357a6b8c assets/v8/items/v8_block.json
 2c0a31606f7272a6b5ab33491260eb896ff3f828 assets/v8/items/vanilla_extract.json
 4c614b7d8b9c2ce45e60d3e8b98556e4a359c62d assets/v8/models/block/amerite_block.json
+2f38a8355370f281f7e8e2e337b67daa1f98cb19 assets/v8/models/block/ash_tray.json
 9b5fb9ca1904e0c1ad11cd985a31647438762190 assets/v8/models/block/dedlef.json
 3fd809fb49f62af5d89bce7dcdcdf047a2144517 assets/v8/models/block/guenter.json
 7b4d9caf3dd96ed7f9702491fda3e5bb1437a159 assets/v8/models/block/v8_block.json
 9112ef93b8d018666fb687c9e844106a523a003f assets/v8/models/item/apple_flavor.json
-aaafae9cb3f892b9347a47f5f353234bbf2da449 assets/v8/models/item/ash_tray.json
-81309c70423f011a29f19839d330a7a54a84e643 assets/v8/models/item/ash_tray_full.json
 49586608b7e8b5e270aec2df0c9cbace918c16f7 assets/v8/models/item/carrot_flavor.json
 7dd31fa5dc9718af970973db9bb4267f15222434 assets/v8/models/item/cigarette.json
 140a7119a0b700c0e8de4c585006857220894ace assets/v8/models/item/cigarette_carton.json

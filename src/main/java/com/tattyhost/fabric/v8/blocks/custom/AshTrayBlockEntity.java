@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AshTrayBlockEntity extends BlockEntity {
+
     public AshTrayBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.ASH_TRAY_BLOCK_ENTITY_TYPE, pos, state);
     }

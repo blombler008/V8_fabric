@@ -7,15 +7,12 @@ package com.tattyhost.fabric.v8.client.model;
 import com.tattyhost.fabric.v8.V8;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import org.joml.Vector3f;
 
 public class AshTrayModel extends Model {
 
-	public static final EntityModelLayer LAYER = new EntityModelLayer(V8.id("ashtray"), "main");
+	public static final EntityModelLayer LAYER = new EntityModelLayer(V8.id("ash_tray"), "main");
 	public static final Identifier TEXTURE = V8.id("textures/entity/ash_tray.png");
 
 
@@ -26,10 +23,22 @@ public class AshTrayModel extends Model {
 		this.ash = root.getChild("ash");
 		this.ashtray = root.getChild("ashtray");
 	}
+
+	public static TexturedModelData getAshlessTexturedModelData() {
+		return TexturedModelData.of(getAshlessModelData(), 64, 64);
+	}
+
 	public static TexturedModelData getTexturedModelData() {
+		ModelData modelData = getAshlessModelData();
+		ModelPartData modelPartData = modelData.getRoot();
+		modelPartData.addChild("ash", ModelPartBuilder.create().uv(0, 11).cuboid(-4.01F, 0.1F, -4.01F, 7.98F, 4.0F, 7.98F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+		return TexturedModelData.of(modelData, 64, 64);
+	}
+
+	private static ModelData getAshlessModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData ashtray = modelPartData.addChild("ashtray", ModelPartBuilder.create().uv(0, 0).cuboid(-5.0F, -2.0F, -5.0F, 10.0F, 1.0F, 10.0F, new Dilation(0.0F))
+		modelPartData.addChild("ashtray", ModelPartBuilder.create().uv(0, 0).cuboid(-5.0F, -2.0F, -5.0F, 10.0F, 1.0F, 10.0F, new Dilation(0.0F))
 				.uv(20, 23).cuboid(-5.0F, -1.0F, -5.0F, 1.0F, 2.0F, 9.0F, new Dilation(0.0F))
 				.uv(32, 11).cuboid(4.0F, -1.0F, -4.0F, 1.0F, 2.0F, 9.0F, new Dilation(0.0F))
 				.uv(0, 34).cuboid(-5.0F, -1.0F, 4.0F, 9.0F, 2.0F, 1.0F, new Dilation(0.0F))
@@ -43,9 +52,9 @@ public class AshTrayModel extends Model {
 				.uv(36, 39).cuboid(1.0F, 1.0F, 4.0F, 4.0F, 1.0F, 1.0F, new Dilation(0.0F))
 				.uv(20, 34).cuboid(-4.0F, -1.0F, -5.0F, 9.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 2.0F, 0.0F));
 
-		ModelPartData ash = modelPartData.addChild("ash", ModelPartBuilder.create().uv(0, 11).cuboid(-4.0F, 0.1F, -4.0F, 8.0F, 4.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
-		return TexturedModelData.of(modelData, 64, 64);
+		return modelData;
 	}
+
 
 	public void setAshScale(float scaleY) {
 //		this.ash.scale(new Vector3f(0.0F, scaleY, 0.0F));

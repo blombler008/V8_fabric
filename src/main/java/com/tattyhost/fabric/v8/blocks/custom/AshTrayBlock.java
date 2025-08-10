@@ -37,6 +37,7 @@ public class AshTrayBlock extends BlockWithEntity {
     public AshTrayBlock(AbstractBlock.Settings settings) {
         super(settings);
         setDefaultState(getStateManager().getDefaultState().with(LEVEL, 0));
+
     }
 
     @Override

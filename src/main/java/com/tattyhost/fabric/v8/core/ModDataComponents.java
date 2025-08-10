@@ -9,12 +9,19 @@ import net.minecraft.util.Identifier;
 public class ModDataComponents {
 
     // Registriere die Zigaretten-Statistik als eine Datenkomponente
-    public static final ComponentType<CigaretteStats> CIGARETTE_STATS = register(
-            "cigarette_stats", ComponentType.<CigaretteStats>builder().codec(CigaretteStats.CODEC).build()
+    public static final ComponentType<TobaccoStats> TOBACCO_STATS = Registry.register(
+            Registries.DATA_COMPONENT_TYPE, V8.id("tobacco_stats"),
+            ComponentType.<TobaccoStats>builder().codec(TobaccoStats.CODEC).build()
     );
 
-    public static final ComponentType<TobaccoStats> TOBACCO_STATS = register(
-            "tobacco_stats", ComponentType.<TobaccoStats>builder().codec(TobaccoStats.CODEC).build()
+    public static final ComponentType<CigaretteCore> CIGARETTE_CORE = Registry.register(
+            Registries.DATA_COMPONENT_TYPE, V8.id("cigarette_core"),
+            ComponentType.<CigaretteCore>builder().codec(CigaretteCore.CODEC).build()
+    );
+
+    public static final ComponentType<CigaretteBurn> CIGARETTE_BURN = Registry.register(
+            Registries.DATA_COMPONENT_TYPE, V8.id("cigarette_burn"),
+            ComponentType.<CigaretteBurn>builder().codec(CigaretteBurn.CODEC).build()
     );
 
     public static <T> ComponentType<T> register(String id, ComponentType<T> componentType) {

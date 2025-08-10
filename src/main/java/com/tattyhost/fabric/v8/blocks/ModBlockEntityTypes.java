@@ -31,7 +31,7 @@ public class ModBlockEntityTypes {
     );
 
     public static final BlockEntityType<AshTrayBlockEntity> ASH_TRAY_BLOCK_ENTITY_TYPE = register(
-            "ash_trey",
+            "ash_tray",
             // For versions 1.21.2 and above,
             // replace `BlockEntityType.Builder` with `FabricBlockEntityTypeBuilder`.
             FabricBlockEntityTypeBuilder.create(AshTrayBlockEntity::new, ModBlocks.ASH_TRAY).build()

@@ -20,7 +20,6 @@ public class ModBlocks {
             .mapColor(MapColor.STONE_GRAY)
             .nonOpaque()
             .breakInstantly()
-            .noBlockBreakParticles()
             .allowsSpawning(Blocks::never)
             .solidBlock(Blocks::never)
             .suffocates(Blocks::never)

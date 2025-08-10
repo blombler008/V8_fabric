@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "level=0": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=1": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=2": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=3": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=4": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=5": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=6": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=7": {
+      "model": "v8:block/ash_tray"
+    },
+    "level=8": {
+      "model": "v8:block/ash_tray"
+    }
+  }
+}

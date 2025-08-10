@@ -2,9 +2,7 @@ package com.tattyhost.fabric.v8.items;
 
 import com.tattyhost.fabric.v8.V8;
 import com.tattyhost.fabric.v8.blocks.ModPlants;
-import com.tattyhost.fabric.v8.core.CigaretteStats;
-import com.tattyhost.fabric.v8.core.ModDataComponents;
-import com.tattyhost.fabric.v8.core.TobaccoStats;
+import com.tattyhost.fabric.v8.core.*;
 import com.tattyhost.fabric.v8.utils.ItemConstructorFactory;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -53,7 +51,11 @@ public class ModItems {
     public static final Item CIGARETTE_ITEM = register(
             "cigarette",
             CigaretteItem::new,
-            new Item.Settings().component(ModDataComponents.CIGARETTE_STATS, CigaretteStats.DEFAULT),
+            new Item.Settings()
+                    .component(ModDataComponents.CIGARETTE_CORE, CigaretteCore.DEFAULT)
+                    .component(ModDataComponents.TOBACCO_STATS, TobaccoStats.DEFAULT)
+                    .component(ModDataComponents.CIGARETTE_BURN, CigaretteBurn.DEFAULT)
+                    .maxCount(1),
             true
     );
 

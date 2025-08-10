@@ -1,12 +1,17 @@
 package com.tattyhost.fabric.v8.core;
 
 public enum TobaccoType {
-    DRIED,              // Getrockneter Tabak
-    CUT,                // Geschnittener Tabak
-    SHREDDED,           // Geschredderter Tabak
-    CURED;              // Gereifter Tabak
 
 
+    DRIED(1.30f),      // trocken → brennt am schnellsten
+    SHREDDED(1.15f),   // geschreddert → deutlich schneller (mehr Oberfläche)
+    CUT(1.05f),        // geschnitten → leicht schneller als Basis
+    CURED(1.00f),      // „normal“/gereift → Basis
+    FLAVORED(0.95f),   // leicht feuchter durch Aroma → etwas langsamer
+    FRESH(0.85f);      // feucht → am langsamsten
+
+    public final float burnRate;
+    TobaccoType(float burnRate) { this.burnRate = burnRate; }
     public static TobaccoType fromString(String string) {
         return valueOf(string.toUpperCase());
     }
@@ -18,3 +23,4 @@ public enum TobaccoType {
 
 
 }
+

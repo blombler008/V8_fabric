@@ -23,6 +23,7 @@ public class AshTrayBER implements BlockEntityRenderer<AshTrayBlockEntity> {
     private BlockEntityRendererFactory.Context context;
     public AshTrayBER(BlockEntityRendererFactory.Context ctx) {
         model = new AshTrayModel(ctx.getLayerModelPart(AshTrayModel.LAYER));
+
         this.context = ctx;
     }
 

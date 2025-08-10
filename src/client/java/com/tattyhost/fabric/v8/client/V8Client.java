@@ -28,6 +28,7 @@ public class V8Client implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(AshTrayModel.LAYER, AshTrayModel::getTexturedModelData);
 
 
+
         // Register Screens
         HandledScreens.register(ModScreenHandlers.HIGH_TEMP_FURNACE_SCREEN_HANDLER, HighTempFurnaceScreen::new);
         HandledScreens.register(ModScreenHandlers.GUENTER_SCREEN_HANDLER, GuenterScreen::new);

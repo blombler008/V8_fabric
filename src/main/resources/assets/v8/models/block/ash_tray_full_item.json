@@ -1,9 +1,11 @@
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
+	"texture_size": [16, 16],
 	"textures": {
 		"0": "v8:block/steel_block",
 		"1": "v8:block/ashtray_ash",
-		"particle": "v8:block/ashtray_ash"
+		"particle": "v8:block/steel_block"
 	},
 	"elements": [
 		{
@@ -163,6 +165,19 @@
 			}
 		},
 		{
+			"from": [3, 0, 3],
+			"to": [13, 1, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
+			"faces": {
+				"north": {"uv": [3, 5, 13, 6], "texture": "#0"},
+				"east": {"uv": [3, 5, 13, 6], "texture": "#0"},
+				"south": {"uv": [3, 4, 13, 5], "texture": "#0"},
+				"west": {"uv": [3, 5, 13, 6], "texture": "#0"},
+				"up": {"uv": [13, 13, 3, 3], "texture": "#0"},
+				"down": {"uv": [13, 3, 3, 13], "texture": "#0"}
+			}
+		},
+		{
 			"name": "ash",
 			"from": [4, 0.1, 4],
 			"to": [12, 3.9, 12],
@@ -175,38 +190,27 @@
 				"up": {"uv": [4, 4, 12, 12], "texture": "#1"},
 				"down": {"uv": [4, 4, 12, 12], "texture": "#1"}
 			}
-		},
-		{
-			"from": [3, 0, 3],
-			"to": [13, 1, 13],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
-			"faces": {
-				"north": {"uv": [3, 5, 13, 6], "texture": "#0"},
-				"east": {"uv": [3, 5, 13, 6], "texture": "#0"},
-				"south": {"uv": [3, 4, 13, 5], "texture": "#0"},
-				"west": {"uv": [3, 5, 13, 6], "texture": "#0"},
-				"up": {"uv": [13, 13, 3, 3], "texture": "#0"},
-				"down": {"uv": [13, 3, 3, 13], "texture": "#0"}
-			}
 		}
 	],
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [75, 45, 0],
-			"translation": [0, 2.5, 0],
+			"translation": [0, 2.5, 2],
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [75, 45, 0],
-			"translation": [0, 2.5, 0],
+			"translation": [0, 2.5, 2],
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"firstperson_righthand": {
 			"rotation": [0, 45, 0],
+			"translation": [0, 3.75, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
-			"rotation": [0, 225, 0],
+			"rotation": [0, -135, 0],
+			"translation": [0, 3.75, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"ground": {
@@ -214,11 +218,15 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {
-			"rotation": [30, 225, 0],
+			"rotation": [30, -135, 0],
+			"translation": [0, 2.5, 0],
 			"scale": [0.625, 0.625, 0.625]
 		},
 		"head": {
 			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"translation": [0, 6, 0]
 		}
 	},
 	"groups": [
@@ -226,9 +234,7 @@
 			"name": "ashtray",
 			"origin": [4, 3, 12],
 			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-		},
-		12,
-		13
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		}
 	]
 }

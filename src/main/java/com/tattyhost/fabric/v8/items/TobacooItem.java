@@ -21,21 +21,18 @@ public class TobacooItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if (stack.contains(ModDataComponents.TOBACCO_STATS)) {
-            TobaccoStats stats = stack.get(ModDataComponents.TOBACCO_STATS);
-            assert stats != null;
+        // sicher & ohne assert
+        var stats = stack.getOrDefault(ModDataComponents.TOBACCO_STATS, TobaccoStats.DEFAULT);
 
-
-            CigaretteFlavorType flavor = stats.flavor();
-            boolean isFlavored = flavor != CigaretteFlavorType.NONE;
-
-            tooltip.add(Text.literal("Quality: " + (stats.quality() * 100 / this.maxQuantity) + "%").formatted(Formatting.GOLD));
-            if(isFlavored) {
-                tooltip.add(Text.literal("Flavor: " + stats.flavor()).formatted(Formatting.GRAY));
-            }
-            tooltip.add(Text.literal("Tobacco Type: " + stats.tobaccoType()).formatted(Formatting.GRAY));
-            tooltip.add(Text.literal("Moisture: " + stats.moisture() + "%").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal("Nicotine: " + stats.nicotine() + "mg").formatted(Formatting.GRAY));
+        // Flavor nur zeigen, wenn vorhanden
+        if (stats.flavor() != CigaretteFlavorType.NONE) {
+            tooltip.add(Text.literal("Flavor: " + stats.flavor()).formatted(Formatting.GRAY));
         }
+
+        tooltip.add(Text.literal("Tobacco: " + stats.form() + "/" + stats.condition()).formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Moisture: " + (int) stats.moisture() + "%").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Nicotine: " + stats.nicotine() + "mg").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Tar: " + stats.tar() + "mg").formatted(Formatting.DARK_GRAY));
+        tooltip.add(Text.literal("Carbon Monoxide: " + stats.carbon() + "mg").formatted(Formatting.DARK_GRAY));
     }
 }
