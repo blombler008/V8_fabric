@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "v8:block/high_temp_furnace_item"
+    "model": "v8:block/high_temp_furnace"
   }
 }

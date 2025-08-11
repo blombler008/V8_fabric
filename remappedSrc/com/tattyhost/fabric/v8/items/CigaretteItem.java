@@ -28,7 +28,7 @@ public class CigaretteItem extends Item {
 
     private static final double MAX_QUALITY = 20.0;
 
-    public CigaretteItem(Settings settings) { super(settings); }
+    public CigaretteItem(net.minecraft.item.Item.Settings settings) { super(settings); }
 
     private static float computeBurnRate(ItemStack stack) {
         var tob  = stack.getOrDefault(ModDataComponents.TOBACCO_STATS, TobaccoStats.DEFAULT);
@@ -115,9 +115,9 @@ public class CigaretteItem extends Item {
                 new CigaretteCore(core.quality(), core.filtered(), core.filterEfficiency(), false));
 
         // Item verbrauchen (nicht in Creative)
-        //if (user instanceof PlayerEntity p && !p.isCreative()) {
-        //    stack.decrement(1);
-        //}
+        if (user instanceof PlayerEntity p && !p.isCreative()) {
+            stack.decrement(1);
+        }
         return stack.isEmpty() ? new ItemStack(Items.AIR) : stack;
     }
 
